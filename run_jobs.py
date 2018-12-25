@@ -37,11 +37,11 @@ cmd_cctbx=" ".join([
     ])
 
 def run(cmd = cmd_cctbx):
-  results_prefix = "./cctbx_refine"
+  results_prefix = "./cctbx_opt"
   perturbed_prefix = "./perturbed/"
   rmsd_dirs = ["0.3/","0.6/","0.9/","1.2/","1.5/"]
   base_names = ["0","1","2","3","4","5","6","7","8","9"]
-  easy_run.call("rm -rf cctbx_refine")
+  easy_run.call("rm -rf cctbx_opt")
   os.makedirs(results_prefix)
   os.chdir(results_prefix)
   for rmsd_dir in rmsd_dirs:
@@ -60,4 +60,4 @@ def run(cmd = cmd_cctbx):
 if __name__ == "__main__":
   t0 = time.time()
   run()
-  print "Time: %6.4f S" % (time.time() - t0) 
+  print "Time: %6.4f s" % (time.time() - t0) 

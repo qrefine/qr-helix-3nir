@@ -4,16 +4,18 @@ This is a helix extracted from Crystal structure of small protein crambin at 0.4
 ## Analysis of optimization results
 
 ### H bond analysis
-Total number of H bonds: 9
-Reference H-bond distances range (min,max,mean):    1.850    2.175    1.995
-####perturbed:
+   Total number of H bonds: 9.
+
+   Reference H-bond distances range (min,max,mean):    1.850    2.175    1.995
+
+### perturbed:
 model     min     max     mean   %conserved
 0.3/    1.585    2.716    2.117   73.33
 0.6/    1.549    3.378    2.453   33.33
 0.9/    1.534    4.689    2.890   14.44
 1.2/    1.802    4.751    3.126    8.89
 1.5/    2.196    6.777    3.714    1.11
-###cctbx_opt:
+### cctbx_opt:
 model     min     max     mean   %conserved
 0.3/    1.920    2.621    2.237   54.44
 0.6/    1.773    3.173    2.327   43.33

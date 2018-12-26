@@ -22,13 +22,8 @@ def get_model(file_name):
   return model
 
 def run():
-  #
-  root="/Users/pafonine/tmp17/qr-helix-3nir/"
   rmsd_dirs = ["0.3/","0.6/","0.9/","1.2/","1.5/"]
-  file_names = ["0.pdb","1.pdb","2.pdb","3.pdb","4.pdb","5.pdb","6.pdb","7.pdb",
-                "8.pdb","9.pdb"]
-  base_names = ["0","1","2","3","4","5","6","7",
-                "8","9"]
+  base_names = ["0","1","2","3","4","5","6","7","8","9"]
   # Identify i_seqs of O-H pairs involved into H bonds
   h_bonds_i_seqs = []
   h = iotbx.pdb.input(file_name="helix_3nir_6_19.pdb").construct_hierarchy()
@@ -51,13 +46,14 @@ def run():
     ref_dist.min_max_mean().as_tuple()
   print "Hbond analysis"
   print "model     min     max     mean   %conserved"
-  for sub_root in ["perturbed/"]:
+  for sub_root in ["./perturbed/","./cctbx_opt/"]:
+    print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds = flex.double()
       cntr = 0
       for fn in base_names:
-        file_name = root+sub_root+rmsd_dir+fn+".pdb"
-        if(not os.path.exists(file_name)): continue
+        file_name = sub_root+rmsd_dir+fn+".pdb"
+        if(not os.path.exists(file_name)): assert 0
         model = get_model(file_name)
         g = model.geometry_statistics().result()
         sites_cart = model.get_sites_cart()

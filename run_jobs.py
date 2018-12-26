@@ -1,3 +1,4 @@
+# At this moment, it is more convenitent to have independent job script for every method.
 from __future__ import division
 import math, os
 import time
@@ -7,22 +8,6 @@ import mmtbx.model
 from libtbx.utils import null_out
 from libtbx import easy_run
 
-def dist(site1, site2):
-  return math.sqrt(
-    (site1[0]-site2[0])**2 +
-    (site1[1]-site2[1])**2 +
-    (site1[2]-site2[2])**2)
-
-def get_model(file_name):
-  params = mmtbx.model.manager.get_default_pdb_interpretation_params()
-  params.pdb_interpretation.use_neutron_distances = True
-  model = mmtbx.model.manager(
-    model_input               = iotbx.pdb.input(file_name=file_name),
-    build_grm                 = True,
-    log                       = null_out(),
-    pdb_interpretation_params = params)
-  return model
-  
 cmd_cctbx=" ".join([
     "qr.refine",
     "%s",

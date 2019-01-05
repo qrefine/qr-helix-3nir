@@ -46,7 +46,7 @@ def run():
     ref_dist.min_max_mean().as_tuple()
   print "Hbond analysis"
   print "model     min     max     mean   %conserved"
-  for sub_root in ["./perturbed/","./cctbx_opt/"]:
+  for sub_root in ["./perturbed/","./cctbx_opt/","./terachem_opt/"]:
     print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds = flex.double()

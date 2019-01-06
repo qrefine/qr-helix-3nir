@@ -8,11 +8,14 @@ import mmtbx.model
 from libtbx.utils import null_out
 from libtbx import easy_run
 
+#qr.refine 0.pdb restraints=qm engine_name=terachem mode=opt stpmax=0.2 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 basis=6-31g
+
 cmd_terachem=" ".join([
     "qr.refine",
     "%s",
     "restraints=qm",
     "engine_name=terachem",
+    "basis=6-31g",
     "mode=opt",
     "stpmax=0.2",
     "gradient_only=true", # no problem with running up to upper bound.

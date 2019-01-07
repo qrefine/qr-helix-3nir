@@ -54,7 +54,7 @@ def run():
   tmp_cntr1=0
   print "Hbond analysis"
   print "model     min     max     mean   %conserved"
-  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt/","./terachem_opt/"]:
+  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt/","./xtb_opt_gbsa_h2o/","./terachem_opt/"]:
     print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds    = flex.double()
@@ -63,7 +63,7 @@ def run():
       cntr = 0
       for fn in base_names:
         file_name = sub_root+rmsd_dir+fn+".pdb"
-        if(not os.path.exists(file_name)): assert 0
+        if(not os.path.exists(file_name)): assert 0, file_name
         model = get_model(file_name)
         assert ref.h.is_similar_hierarchy(model.get_hierarchy())
         g = model.geometry_statistics(use_hydrogens=True).result()

@@ -12,7 +12,6 @@ cmd_terachem=" ".join([
     "%s",
     "restraints=qm",
     "engine_name=xtb",
-    "quantum.method=-gfn2 -etemp 500 -gbsa h2o",
     "mode=opt",
     "stpmax=0.2",
     "gradient_only=true", # no problem with running up to upper bound.

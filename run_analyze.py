@@ -54,7 +54,7 @@ def run():
   tmp_cntr1=0
   print "Hbond analysis"
   print "model     min     max     mean   conserved  bond_rmsd  rama_favored"
-  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt/","./xtb_opt_gfn2/","./terachem_opt_sto-3g/"]:
+  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt/","./xtb_opt-gfn2/","./terachem_opt_sto-3g/"]:
     print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds    = flex.double()
@@ -86,7 +86,7 @@ def run():
       if(h_bonds.size()>0):
         print rmsd_dir, "%8.3f %8.3f %8.3f"%h_bonds.min_max_mean().as_tuple(), \
           " %7.2f"%(sel.count(True)*100./(len(ref.h_bonds_i_seqs)*cntr)),\
-          "    %6.4f %7.2f"%(flex.mean(rmsd_bonds), flex.mean(rama_fav))
+          "    %6.4f  %7.2f"%(flex.mean(rmsd_bonds), flex.mean(rama_fav))
       else:
         print rmsd_dir, "N/A"
   #

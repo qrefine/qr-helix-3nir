@@ -28,9 +28,7 @@ def run(file_name="helix_3nir_6_19.pdb"):
         "> %s.log"%str(trial)])
       easy_run.call(cmd)
       easy_run.call("rm -rf *.log")
-        
     os.chdir("..")
-      #os.chdir("..")
 
 if __name__ == "__main__":
   run()

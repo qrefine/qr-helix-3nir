@@ -12,7 +12,6 @@ from libtbx import easy_run
 cmd_terachem=" ".join([
     "qr.refine",
     "%s",
-    "restraints=qm",
     "engine_name=mopac",  # tesing gpu version of MOPAC2016
     "mode=opt",
     "stpmax=0.2",
@@ -34,15 +33,19 @@ def run(cmd = cmd_terachem):
   for rmsd_dir in rmsd_dirs:
     print rmsd_dir
     os.makedirs(rmsd_dir)
+    os.chdir(rmsd_dir)
     for bn in base_names:
-      file_name = "../"+perturbed_prefix+rmsd_dir+bn+".pdb"
-      if(not os.path.exists(file_name)): assert 0
+      os.makedirs(bn)
+      os.chdir(bn)
+      file_name = "../../../"+perturbed_prefix+rmsd_dir+bn+".pdb"
+      if(not os.path.exists(file_name)): assert 0, file_name
       cmd_full = cmd%(file_name,bn)
       print "running command:\n%s"%(cmd_full)
       easy_run.call(cmd_full)
-      easy_run.call("mv pdb/%s_refined.pdb %s/%s.pdb"%(bn,rmsd_dir,bn))
-      easy_run.call("mv %s.log %s"%(bn,rmsd_dir))
-      easy_run.call("rm -rf pdb")
+      easy_run.call("cp pdb/%s_refined.pdb ../%s.pdb"%(bn,bn))
+      easy_run.call("cp %s.log ../"%(bn))
+      os.chdir("../")
+    os.chdir("../")
 
 if __name__ == "__main__":
   t0 = time.time()

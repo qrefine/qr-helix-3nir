@@ -66,7 +66,7 @@ def run():
         if(not os.path.exists(file_name)): assert 0, file_name
         model = get_model(file_name)
         assert ref.h.is_similar_hierarchy(model.get_hierarchy())
-        g = model.geometry_statistics().result()
+        g = model.geometry_statistics(use_hydrogens=False).result()
         rmsd_bonds.append(g.bond.mean)
         rama_fav.append(g.ramachandran.favored)
         #print g.bond.mean, g.clash.score, g.rotamer.outliers, g.c_beta.outliers, \

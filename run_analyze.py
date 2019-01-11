@@ -53,8 +53,8 @@ def run():
   ref = get_reference()
   tmp_cntr1=0
   print "Hbond analysis"
-  print "model     min     max     mean   conserved  bond_rmsd  rama_favored"
-  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt/","./xtb_opt-gfn2/","./terachem_opt_sto-3g/"]:
+  print "model     min     max     mean   recovered  bond_rmsd  rama_favored"
+  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt_water/"]:
     print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds    = flex.double()
@@ -66,7 +66,7 @@ def run():
         if(not os.path.exists(file_name)): assert 0, file_name
         model = get_model(file_name)
         assert ref.h.is_similar_hierarchy(model.get_hierarchy())
-        g = model.geometry_statistics(use_hydrogens=True).result()
+        g = model.geometry_statistics().result()
         rmsd_bonds.append(g.bond.mean)
         rama_fav.append(g.ramachandran.favored)
         #print g.bond.mean, g.clash.score, g.rotamer.outliers, g.c_beta.outliers, \
@@ -86,7 +86,7 @@ def run():
       if(h_bonds.size()>0):
         print rmsd_dir, "%8.3f %8.3f %8.3f"%h_bonds.min_max_mean().as_tuple(), \
           " %7.2f"%(sel.count(True)*100./(len(ref.h_bonds_i_seqs)*cntr)),\
-          "    %6.4f  %7.2f"%(flex.mean(rmsd_bonds), flex.mean(rama_fav))
+          "    %6.4f   %7.2f"%(flex.mean(rmsd_bonds), flex.mean(rama_fav))
       else:
         print rmsd_dir, "N/A"
   #

@@ -24,7 +24,7 @@ cmd_xtb      = " ".join(base+["restraints=qm","engine_name=xtb",
                               "> %s.log"])
 cmd_terachem = " ".join(base+["restraints=qm","engine_name=terachem",
                               "basis=6-31g","> %s.log"])
-cmd_mopac    = " ".join(base+["restraints=qm","engine_name=mopac","> %s.log"])
+cmd_mopac    = " ".join(base+["restraints=qm","engine_name=mopac","quantum.method='PM7 COSMO'","> %s.log"])
 
 def run(args):
   assert len(args)==1

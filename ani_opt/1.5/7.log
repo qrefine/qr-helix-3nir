@@ -1,0 +1,410 @@
+Starting Q|R
+Running refinement
+   input {
+     xray_data {
+       file_name = None
+       labels = None
+       high_resolution = None
+       low_resolution = None
+       outliers_rejection = True
+       french_wilson_scale = True
+       french_wilson {
+         max_bins = 60
+         min_bin_size = 40
+       }
+       sigma_fobs_rejection_criterion = None
+       sigma_iobs_rejection_criterion = None
+       ignore_all_zeros = True
+       force_anomalous_flag_to_be_equal_to = None
+       convert_to_non_anomalous_if_ratio_pairs_lone_less_than_threshold = 0.5
+       r_free_flags {
+         file_name = None
+         label = None
+         test_flag_value = None
+         ignore_r_free_flags = False
+         disable_suitability_test = False
+         ignore_pdb_hexdigest = False
+         generate = False
+         fraction = 0.1
+         max_free = 2000
+         lattice_symmetry_max_delta = 5
+         use_lattice_symmetry = True
+         use_dataman_shells = False
+         n_shells = 20
+       }
+     }
+     pdb {
+       file_name = None
+     }
+     monomers {
+       file_name = None
+     }
+     maps {
+       map_file_name = None
+       d_min = None
+       map_coefficients_file_name = None
+       map_coefficients_label = None
+     }
+     sequence = None
+     scattering_table = wk1995 it1992 *n_gaussian neutron electron
+     wavelength = None
+     energy = None
+     twin_law = Auto
+   }
+   max_atoms = 15000
+   debug = False
+   cluster {
+     charge_cutoff = 8.0
+     clustering = false
+     charge_embedding = False
+     two_buffers = False
+     maxnum_residues_in_cluster = 15
+     clustering_method = gnc *bcc
+     altloc_method = *average subtract
+   }
+   restraints = cctbx *qm
+   quantum {
+     engine_name = mopac *ani torchani terachem turbomole pyscf orca gaussian \
+                   xtb
+     charge = None
+     basis = Auto
+     method = Auto
+     memory = None
+     nproc = None
+     qm_addon = gcp dftd3 gcp-d3
+     qm_addon_method = None
+   }
+   refine {
+     dry_run = False
+     sf_algorithm = *direct fft
+     refinement_target_name = *ml ls_wunit_k1
+     mode = *opt refine
+     number_of_macro_cycles = 1
+     number_of_weight_search_cycles = 50
+     number_of_refine_cycles = 5
+     number_of_micro_cycles = 50
+     data_weight = None
+     choose_best_use_r_work = False
+     skip_initial_weight_optimization = False
+     adjust_restraints_weight_scale_value = 2
+     max_iterations_weight = 50
+     max_iterations_refine = 50
+     use_ase_lbfgs = False
+     line_search = True
+     stpmax = 0.2
+     gradient_only = False
+     update_all_scales = True
+     refine_sites = True
+     refine_adp = False
+     restraints_weight_scale = 1.0
+     shake_sites = False
+     use_convergence_test = true
+     max_bond_rmsd = 0.03
+     max_r_work_r_free_gap = 5.0
+     r_tolerance = 0.001
+     rmsd_tolerance = 0.001
+     opt_log = False
+     pre_opt = False
+     pre_opt_stpmax = 0.1
+     pre_opt_iter = 10
+     pre_opt_switch = 2
+     pre_opt_gconv = 3000
+   }
+   parallel {
+     method = *multiprocessing slurm pbs sge lsf threading
+     nproc = None
+     qsub_command = None
+   }
+   output_file_name_prefix = None
+   output_folder_name = "pdb"
+   shared_disk = True
+   rst_file = None
+   dump_gradients = None
+
+Setting QM defaults
+  Setting QM method to HF
+  Setting QM basis to STO-3G
+
+
+***********************************************************
+restart info will be stored in /home/lum/3nir/ani_opt/pdb/7.rst.pickle
+***********************************************************
+
+van Der Waals correction will be unavailable. Please install ased3
+  No function available to set charge to 2
+  No function available to set basis to STO-3G
+  No function available to set method to HF
+start   0 rmsd(b):  0.0178 rws:  1.000 n_fev: 0
+  step:   1 bond rmsd: 0.017836
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154872.50231852484)
+  step:   2 bond rmsd: 0.083575
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154858.88971408515)
+  step:   3 bond rmsd: 0.024557
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154876.67421163616)
+  step:   4 bond rmsd: 0.024789
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154877.19395892764)
+micro_cycle   1 rmsd(b):  0.0248 rws:  1.000 n_fev: 4
+  step:   1 bond rmsd: 0.024789
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154877.19395892764)
+  step:   2 bond rmsd: 0.072916
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154839.69618126657)
+  step:   3 bond rmsd: 0.021630
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154878.28139673112)
+  step:   4 bond rmsd: 0.020959
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154878.50986250999)
+micro_cycle   2 rmsd(b):  0.0210 rws:  1.000 n_fev: 8
+  step:   1 bond rmsd: 0.020959
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154878.50986250999)
+  step:   2 bond rmsd: 0.034093
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154867.04106978088)
+  step:   3 bond rmsd: 0.018086
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154879.52667786818)
+  step:   4 bond rmsd: 0.017765
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154879.83118198445)
+micro_cycle   3 rmsd(b):  0.0178 rws:  1.000 n_fev: 12
+  step:   1 bond rmsd: 0.017765
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154879.83118198445)
+  step:   2 bond rmsd: 0.046810
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154868.87595868026)
+  step:   3 bond rmsd: 0.019999
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.20245986353)
+  step:   4 bond rmsd: 0.019840
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.3567455748)
+micro_cycle   4 rmsd(b):  0.0198 rws:  1.000 n_fev: 16
+  step:   1 bond rmsd: 0.019840
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.3567455748)
+  step:   2 bond rmsd: 0.081391
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154850.57219820609)
+  step:   3 bond rmsd: 0.019167
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.80065624308)
+  step:   4 bond rmsd: 0.018985
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.89144848406)
+micro_cycle   5 rmsd(b):  0.0190 rws:  1.000 n_fev: 20
+  step:   1 bond rmsd: 0.018985
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.89144848406)
+  step:   2 bond rmsd: 0.129013
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154863.99945474754)
+  step:   3 bond rmsd: 0.023379
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154879.81994281759)
+  step:   4 bond rmsd: 0.018602
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.08843955502)
+  step:   5 bond rmsd: 0.018587
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.10923721976)
+micro_cycle   6 rmsd(b):  0.0186 rws:  1.000 n_fev: 25
+  step:   1 bond rmsd: 0.018587
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.10923721976)
+  step:   2 bond rmsd: 0.096000
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154864.0157338751)
+  step:   3 bond rmsd: 0.020225
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154880.62481789905)
+  step:   4 bond rmsd: 0.018640
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.23357401098)
+  step:   5 bond rmsd: 0.018661
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.25813393336)
+micro_cycle   7 rmsd(b):  0.0187 rws:  1.000 n_fev: 30
+  step:   1 bond rmsd: 0.018661
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.25813393336)
+  step:   2 bond rmsd: 0.101937
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154869.57167297648)
+  step:   3 bond rmsd: 0.029326
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154878.59681263851)
+  step:   4 bond rmsd: 0.018844
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.35104192476)
+  step:   5 bond rmsd: 0.018832
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.37424462542)
+micro_cycle   8 rmsd(b):  0.0188 rws:  1.000 n_fev: 35
+  step:   1 bond rmsd: 0.018832
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.37424462542)
+  step:   2 bond rmsd: 0.112667
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154871.08501802402)
+  step:   3 bond rmsd: 0.023224
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154879.11907467392)
+  step:   4 bond rmsd: 0.018769
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.46650985299)
+  step:   5 bond rmsd: 0.018780
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.47672169516)
+micro_cycle   9 rmsd(b):  0.0188 rws:  1.000 n_fev: 40
+  step:   1 bond rmsd: 0.018780
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.47672169516)
+  step:   2 bond rmsd: 0.048201
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154873.58504348807)
+  step:   3 bond rmsd: 0.020089
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.69658355505)
+  step:   4 bond rmsd: 0.020151
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.79863324758)
+micro_cycle  10 rmsd(b):  0.0202 rws:  1.000 n_fev: 44
+  step:   1 bond rmsd: 0.020151
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.79863324758)
+  step:   2 bond rmsd: 0.120776
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154872.10317290886)
+  step:   3 bond rmsd: 0.023916
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154879.34305738888)
+  step:   4 bond rmsd: 0.019738
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.06183874531)
+  step:   5 bond rmsd: 0.019728
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.07250633571)
+micro_cycle  11 rmsd(b):  0.0197 rws:  1.000 n_fev: 49
+  step:   1 bond rmsd: 0.019728
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.07250633571)
+  step:   2 bond rmsd: 0.060006
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154869.46128390305)
+  step:   3 bond rmsd: 0.019945
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.10352752553)
+  step:   4 bond rmsd: 0.019725
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.16118727392)
+  step:   5 bond rmsd: 0.019712
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.19136356754)
+micro_cycle  12 rmsd(b):  0.0197 rws:  1.000 n_fev: 54
+  step:   1 bond rmsd: 0.019712
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.19136356754)
+  step:   2 bond rmsd: 0.138643
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154873.00146942234)
+  step:   3 bond rmsd: 0.023417
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.01401918911)
+  step:   4 bond rmsd: 0.019632
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.24888583247)
+  step:   5 bond rmsd: 0.019631
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.25391615662)
+micro_cycle  13 rmsd(b):  0.0196 rws:  1.000 n_fev: 59
+  step:   1 bond rmsd: 0.019631
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.25391615662)
+  step:   2 bond rmsd: 0.080253
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154870.33956781728)
+  step:   3 bond rmsd: 0.020481
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154881.7519422101)
+  step:   4 bond rmsd: 0.019653
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.28358928609)
+  step:   5 bond rmsd: 0.019656
+ RUNNING ANI
+Atoms(symbols='C68H116N22O19S', pbc=False, calculator=ANI(...))
+('Final Energy: ', -154882.28956568666)
+micro_cycle  14 rmsd(b):  0.0197 rws:  1.000 n_fev: 64
+ Convergence at micro_cycle: 14
+See 7_refined.pdb in pdb folder.
+Time: 7.1911

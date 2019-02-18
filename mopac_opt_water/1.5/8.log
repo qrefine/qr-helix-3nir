@@ -1,0 +1,325 @@
+Starting Q|R
+version:   v1.0-22-g4c4e7c  
+Running refinement
+   input {
+     xray_data {
+       file_name = None
+       labels = None
+       high_resolution = None
+       low_resolution = None
+       outliers_rejection = True
+       french_wilson_scale = True
+       french_wilson {
+         max_bins = 60
+         min_bin_size = 40
+       }
+       sigma_fobs_rejection_criterion = None
+       sigma_iobs_rejection_criterion = None
+       ignore_all_zeros = True
+       force_anomalous_flag_to_be_equal_to = None
+       convert_to_non_anomalous_if_ratio_pairs_lone_less_than_threshold = 0.5
+       r_free_flags {
+         file_name = None
+         label = None
+         test_flag_value = None
+         ignore_r_free_flags = False
+         disable_suitability_test = False
+         ignore_pdb_hexdigest = False
+         generate = False
+         fraction = 0.1
+         max_free = 2000
+         lattice_symmetry_max_delta = 5
+         use_lattice_symmetry = True
+         use_dataman_shells = False
+         n_shells = 20
+       }
+     }
+     pdb {
+       file_name = None
+     }
+     monomers {
+       file_name = None
+     }
+     maps {
+       map_file_name = None
+       d_min = None
+       map_coefficients_file_name = None
+       map_coefficients_label = None
+     }
+     sequence = None
+     scattering_table = wk1995 it1992 *n_gaussian neutron electron
+     wavelength = None
+     energy = None
+     twin_law = Auto
+   }
+   max_atoms = 15000
+   debug = False
+   cluster {
+     charge_cutoff = 8.0
+     clustering = false
+     charge_embedding = False
+     two_buffers = False
+     maxnum_residues_in_cluster = 15
+     clustering_method = gnc *bcc
+     altloc_method = *average subtract
+     g_scan = 10 15 20
+     g_ref = None
+     g_mode = None
+   }
+   restraints = cctbx *qm
+   quantum {
+     engine_name = *mopac ani torchani terachem turbomole pyscf orca gaussian \
+                   xtb
+     charge = None
+     basis = Auto
+     method = Auto
+     memory = None
+     nproc = 8
+     qm_addon = gcp dftd3 gcp-d3
+     qm_addon_method = None
+   }
+   refine {
+     dry_run = False
+     sf_algorithm = *direct fft
+     refinement_target_name = *ml ls_wunit_k1
+     mode = *opt refine gtest
+     number_of_macro_cycles = 1
+     number_of_weight_search_cycles = 50
+     number_of_refine_cycles = 5
+     number_of_micro_cycles = 50
+     data_weight = None
+     choose_best_use_r_work = False
+     skip_initial_weight_optimization = False
+     adjust_restraints_weight_scale_value = 2
+     max_iterations_weight = 50
+     max_iterations_refine = 50
+     use_ase_lbfgs = False
+     line_search = True
+     stpmax = 0.2
+     gradient_only = true
+     update_all_scales = True
+     refine_sites = True
+     refine_adp = False
+     restraints_weight_scale = 1.0
+     shake_sites = False
+     use_convergence_test = true
+     max_bond_rmsd = 0.03
+     max_r_work_r_free_gap = 5.0
+     r_tolerance = 0.001
+     rmsd_tolerance = 0.001
+     opt_log = False
+     pre_opt = False
+     pre_opt_stpmax = 0.1
+     pre_opt_iter = 10
+     pre_opt_switch = 2
+     pre_opt_gconv = 3000
+   }
+   parallel {
+     method = *multiprocessing slurm pbs sge lsf threading
+     nproc = None
+     qsub_command = None
+   }
+   output_file_name_prefix = None
+   output_folder_name = "pdb"
+   shared_disk = True
+   rst_file = None
+   dump_gradients = None
+
+Setting QM defaults
+  Setting QM method to PM7
+
+
+***********************************************************
+restart info will be stored in /home/lum/mopac_opt/15_5-9/mopac_opt/pdb/8.rst.pickle
+***********************************************************
+
+start   0 rmsd(b):  0.0195 rws:  1.000 n_fev: 0
+  step:   1 bond rmsd: 0.019460
+  step:   2 bond rmsd: 0.094728
+  step:   3 bond rmsd: 0.094728
+  step:   4 bond rmsd: 0.081539
+  step:   5 bond rmsd: 0.067379
+  step:   6 bond rmsd: 0.054375
+  step:   7 bond rmsd: 0.044741
+  step:   8 bond rmsd: 0.038105
+  step:   9 bond rmsd: 0.033228
+  step:  10 bond rmsd: 0.029653
+  step:  11 bond rmsd: 0.026787
+  step:  12 bond rmsd: 0.024623
+  step:  13 bond rmsd: 0.022931
+  step:  14 bond rmsd: 0.021641
+  step:  15 bond rmsd: 0.020640
+  step:  16 bond rmsd: 0.020053
+  step:  17 bond rmsd: 0.019811
+  step:  18 bond rmsd: 0.019957
+  step:  19 bond rmsd: 0.020176
+  step:  20 bond rmsd: 0.020494
+  step:  21 bond rmsd: 0.020872
+  step:  22 bond rmsd: 0.021201
+  step:  23 bond rmsd: 0.021263
+  step:  24 bond rmsd: 0.021710
+  step:  25 bond rmsd: 0.021890
+  step:  26 bond rmsd: 0.022195
+  step:  27 bond rmsd: 0.022336
+  step:  28 bond rmsd: 0.022518
+  step:  29 bond rmsd: 0.022663
+  step:  30 bond rmsd: 0.022710
+  step:  31 bond rmsd: 0.022979
+  step:  32 bond rmsd: 0.022994
+  step:  33 bond rmsd: 0.022998
+  step:  34 bond rmsd: 0.022946
+  step:  35 bond rmsd: 0.022939
+  step:  36 bond rmsd: 0.022811
+  step:  37 bond rmsd: 0.022751
+  step:  38 bond rmsd: 0.022776
+  step:  39 bond rmsd: 0.022544
+  step:  40 bond rmsd: 0.022544
+  step:  41 bond rmsd: 0.022441
+  step:  42 bond rmsd: 0.022446
+  step:  43 bond rmsd: 0.022340
+  step:  44 bond rmsd: 0.022372
+  step:  45 bond rmsd: 0.022269
+  step:  46 bond rmsd: 0.022217
+  step:  47 bond rmsd: 0.022199
+  step:  48 bond rmsd: 0.022200
+  step:  49 bond rmsd: 0.022108
+  step:  50 bond rmsd: 0.022300
+  step:  51 bond rmsd: 0.022246
+  step:  52 bond rmsd: 0.022234
+micro_cycle   1 rmsd(b):  0.0222 rws:  1.000 n_fev: 52
+  step:   1 bond rmsd: 0.022234
+  step:   2 bond rmsd: 0.075398
+  step:   3 bond rmsd: 0.075398
+  step:   4 bond rmsd: 0.061447
+  step:   5 bond rmsd: 0.047865
+  step:   6 bond rmsd: 0.036409
+  step:   7 bond rmsd: 0.031052
+  step:   8 bond rmsd: 0.028257
+  step:   9 bond rmsd: 0.026355
+  step:  10 bond rmsd: 0.024946
+  step:  11 bond rmsd: 0.023940
+  step:  12 bond rmsd: 0.023234
+  step:  13 bond rmsd: 0.022752
+  step:  14 bond rmsd: 0.022429
+  step:  15 bond rmsd: 0.022219
+  step:  16 bond rmsd: 0.022086
+  step:  17 bond rmsd: 0.022006
+  step:  18 bond rmsd: 0.021963
+  step:  19 bond rmsd: 0.021942
+  step:  20 bond rmsd: 0.021937
+  step:  21 bond rmsd: 0.021942
+  step:  22 bond rmsd: 0.021957
+  step:  23 bond rmsd: 0.021978
+  step:  24 bond rmsd: 0.022006
+  step:  25 bond rmsd: 0.022041
+  step:  26 bond rmsd: 0.022087
+  step:  27 bond rmsd: 0.022148
+  step:  28 bond rmsd: 0.022219
+  step:  29 bond rmsd: 0.022210
+  step:  30 bond rmsd: 0.022289
+  step:  31 bond rmsd: 0.022359
+  step:  32 bond rmsd: 0.022351
+  step:  33 bond rmsd: 0.022434
+  step:  34 bond rmsd: 0.022387
+  step:  35 bond rmsd: 0.022353
+  step:  36 bond rmsd: 0.022305
+  step:  37 bond rmsd: 0.022245
+  step:  38 bond rmsd: 0.022177
+  step:  39 bond rmsd: 0.022064
+  step:  40 bond rmsd: 0.022021
+  step:  41 bond rmsd: 0.021956
+  step:  42 bond rmsd: 0.021889
+  step:  43 bond rmsd: 0.021885
+  step:  44 bond rmsd: 0.021760
+  step:  45 bond rmsd: 0.021743
+  step:  46 bond rmsd: 0.021695
+  step:  47 bond rmsd: 0.021640
+  step:  48 bond rmsd: 0.021619
+  step:  49 bond rmsd: 0.021549
+  step:  50 bond rmsd: 0.021546
+  step:  51 bond rmsd: 0.021410
+  step:  52 bond rmsd: 0.021462
+micro_cycle   2 rmsd(b):  0.0215 rws:  1.000 n_fev: 104
+  step:   1 bond rmsd: 0.021462
+  step:   2 bond rmsd: 0.071049
+  step:   3 bond rmsd: 0.044699
+  step:   4 bond rmsd: 0.037836
+  step:   5 bond rmsd: 0.031791
+  step:   6 bond rmsd: 0.027816
+  step:   7 bond rmsd: 0.025407
+  step:   8 bond rmsd: 0.023866
+  step:   9 bond rmsd: 0.022865
+  step:  10 bond rmsd: 0.022213
+  step:  11 bond rmsd: 0.021806
+  step:  12 bond rmsd: 0.021558
+  step:  13 bond rmsd: 0.021413
+  step:  14 bond rmsd: 0.021335
+  step:  15 bond rmsd: 0.021298
+  step:  16 bond rmsd: 0.021286
+  step:  17 bond rmsd: 0.021290
+  step:  18 bond rmsd: 0.021304
+  step:  19 bond rmsd: 0.021325
+  step:  20 bond rmsd: 0.021349
+  step:  21 bond rmsd: 0.021377
+  step:  22 bond rmsd: 0.021411
+  step:  23 bond rmsd: 0.021450
+  step:  24 bond rmsd: 0.021499
+  step:  25 bond rmsd: 0.021565
+  step:  26 bond rmsd: 0.021642
+  step:  27 bond rmsd: 0.021750
+  step:  28 bond rmsd: 0.021823
+  step:  29 bond rmsd: 0.021989
+  step:  30 bond rmsd: 0.022037
+  step:  31 bond rmsd: 0.022061
+  step:  32 bond rmsd: 0.022053
+  step:  33 bond rmsd: 0.022034
+  step:  34 bond rmsd: 0.021985
+  step:  35 bond rmsd: 0.021961
+  step:  36 bond rmsd: 0.021919
+  step:  37 bond rmsd: 0.021878
+  step:  38 bond rmsd: 0.021846
+  step:  39 bond rmsd: 0.021801
+  step:  40 bond rmsd: 0.021772
+  step:  41 bond rmsd: 0.021727
+  step:  42 bond rmsd: 0.021701
+  step:  43 bond rmsd: 0.021678
+  step:  44 bond rmsd: 0.021677
+  step:  45 bond rmsd: 0.021671
+  step:  46 bond rmsd: 0.021655
+  step:  47 bond rmsd: 0.021647
+  step:  48 bond rmsd: 0.021665
+  step:  49 bond rmsd: 0.021631
+  step:  50 bond rmsd: 0.021704
+  step:  51 bond rmsd: 0.021670
+  step:  52 bond rmsd: 0.021672
+micro_cycle   3 rmsd(b):  0.0217 rws:  1.000 n_fev: 156
+  step:   1 bond rmsd: 0.021672
+  step:   2 bond rmsd: 0.081201
+  step:   3 bond rmsd: 0.046651
+  step:   4 bond rmsd: 0.039141
+  step:   5 bond rmsd: 0.032244
+  step:   6 bond rmsd: 0.028030
+  step:   7 bond rmsd: 0.025548
+  step:   8 bond rmsd: 0.023993
+  step:   9 bond rmsd: 0.022987
+  step:  10 bond rmsd: 0.022335
+  step:  11 bond rmsd: 0.021928
+  step:  12 bond rmsd: 0.021679
+  step:  13 bond rmsd: 0.021533
+  step:  14 bond rmsd: 0.021453
+  step:  15 bond rmsd: 0.021414
+  step:  16 bond rmsd: 0.021400
+  step:  17 bond rmsd: 0.021403
+  step:  18 bond rmsd: 0.021414
+  step:  19 bond rmsd: 0.021432
+  step:  20 bond rmsd: 0.021452
+  step:  21 bond rmsd: 0.021476
+  step:  22 bond rmsd: 0.021503
+  step:  23 bond rmsd: 0.021534
+  step:  24 bond rmsd: 0.021570
+  step:  25 bond rmsd: 0.021616
+  step:  26 bond rmsd: 0.021669
+  step:  27 bond rmsd: 0.021754
+minimization failed: MOPAC: could not find total energy
+See 8_refined.pdb in pdb folder.
+Time: 16807.7400

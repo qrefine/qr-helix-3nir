@@ -19,9 +19,7 @@ base=[
     ]
 
 cmd_cctbx    = " ".join(base+["restraints=cctbx","> %s.log"])
-cmd_xtb      = " ".join(base+["restraints=qm","engine_name=xtb",
-                              "quantum.method='-gfn2 -etemp 500 -gbsa h2o'",
-                              "> %s.log"])
+cmd_xtb      = " ".join(base+["restraints=qm","engine_name=xtb","quantum.nproc=8","> %s.log"])
 cmd_terachem = " ".join(base+["restraints=qm","engine_name=terachem",
                               "basis=6-31g","> %s.log"])
 cmd_mopac    = " ".join(base+["restraints=qm","engine_name=mopac","> %s.log"])

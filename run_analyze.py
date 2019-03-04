@@ -53,22 +53,24 @@ def run():
   ref = get_reference()
   tmp_cntr1=0
   print "Hbond analysis"
-  print "model     min     max     mean   recovered  bond_rmsd  rama_favored"
-  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt_water/"]:
+  print "model     min     max     mean   recovered  bond_rmsd  rama_favored clashscore"
+  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt_default/","./xtb_opt_water/","./ani_opt/","./terachem_opt_water/","./mopac_opt_water/"]:
     print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds    = flex.double()
       rmsd_bonds = flex.double()
       rama_fav   = flex.double()
+      clashscore = flex.double()
       cntr = 0
       for fn in base_names:
         file_name = sub_root+rmsd_dir+fn+".pdb"
         if(not os.path.exists(file_name)): assert 0, file_name
         model = get_model(file_name)
         assert ref.h.is_similar_hierarchy(model.get_hierarchy())
-        g = model.geometry_statistics(use_hydrogens=False).result()
+        g = model.geometry_statistics(use_hydrogens=True).result()
         rmsd_bonds.append(g.bond.mean)
         rama_fav.append(g.ramachandran.favored)
+        clashscore.append(g.clash.score)
         #print g.bond.mean, g.clash.score, g.rotamer.outliers, g.c_beta.outliers, \
         #  g.ramachandran.outliers, g.ramachandran.allowed, g.ramachandran.favored
         sites_cart = model.get_sites_cart()
@@ -86,7 +88,7 @@ def run():
       if(h_bonds.size()>0):
         print rmsd_dir, "%8.3f %8.3f %8.3f"%h_bonds.min_max_mean().as_tuple(), \
           " %7.2f"%(sel.count(True)*100./(len(ref.h_bonds_i_seqs)*cntr)),\
-          "    %6.4f   %7.2f"%(flex.mean(rmsd_bonds), flex.mean(rama_fav))
+          "    %6.4f    %7.2f     %4.2f"%(flex.mean(rmsd_bonds), flex.mean(rama_fav), flex.mean(clashscore))
       else:
         print rmsd_dir, "N/A"
   #

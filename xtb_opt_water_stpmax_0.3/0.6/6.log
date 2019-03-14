@@ -1,0 +1,2334 @@
+Starting Q|R
+version:   v1.0-22-g4c4e7c  
+Running refinement
+   input {
+     xray_data {
+       file_name = None
+       labels = None
+       high_resolution = None
+       low_resolution = None
+       outliers_rejection = True
+       french_wilson_scale = True
+       french_wilson {
+         max_bins = 60
+         min_bin_size = 40
+       }
+       sigma_fobs_rejection_criterion = None
+       sigma_iobs_rejection_criterion = None
+       ignore_all_zeros = True
+       force_anomalous_flag_to_be_equal_to = None
+       convert_to_non_anomalous_if_ratio_pairs_lone_less_than_threshold = 0.5
+       r_free_flags {
+         file_name = None
+         label = None
+         test_flag_value = None
+         ignore_r_free_flags = False
+         disable_suitability_test = False
+         ignore_pdb_hexdigest = False
+         generate = False
+         fraction = 0.1
+         max_free = 2000
+         lattice_symmetry_max_delta = 5
+         use_lattice_symmetry = True
+         use_dataman_shells = False
+         n_shells = 20
+       }
+     }
+     pdb {
+       file_name = None
+     }
+     monomers {
+       file_name = None
+     }
+     maps {
+       map_file_name = None
+       d_min = None
+       map_coefficients_file_name = None
+       map_coefficients_label = None
+     }
+     sequence = None
+     scattering_table = wk1995 it1992 *n_gaussian neutron electron
+     wavelength = None
+     energy = None
+     twin_law = Auto
+   }
+   max_atoms = 15000
+   debug = False
+   cluster {
+     charge_cutoff = 8.0
+     clustering = false
+     charge_embedding = False
+     two_buffers = False
+     maxnum_residues_in_cluster = 15
+     clustering_method = gnc *bcc
+     altloc_method = *average subtract
+     g_scan = 10 15 20
+     g_ref = None
+     g_mode = None
+   }
+   restraints = cctbx *qm
+   quantum {
+     engine_name = mopac ani torchani terachem turbomole pyscf orca gaussian \
+                   *xtb
+     charge = None
+     basis = Auto
+     method = Auto
+     memory = None
+     nproc = 8
+     qm_addon = gcp dftd3 gcp-d3
+     qm_addon_method = None
+   }
+   refine {
+     dry_run = False
+     sf_algorithm = *direct fft
+     refinement_target_name = *ml ls_wunit_k1
+     mode = *opt refine gtest
+     number_of_macro_cycles = 1
+     number_of_weight_search_cycles = 50
+     number_of_refine_cycles = 5
+     number_of_micro_cycles = 50
+     data_weight = None
+     choose_best_use_r_work = False
+     skip_initial_weight_optimization = False
+     adjust_restraints_weight_scale_value = 2
+     max_iterations_weight = 50
+     max_iterations_refine = 50
+     use_ase_lbfgs = False
+     line_search = True
+     stpmax = 0.3
+     gradient_only = true
+     update_all_scales = True
+     refine_sites = True
+     refine_adp = False
+     restraints_weight_scale = 1.0
+     shake_sites = False
+     use_convergence_test = true
+     max_bond_rmsd = 0.03
+     max_r_work_r_free_gap = 5.0
+     r_tolerance = 0.001
+     rmsd_tolerance = 0.001
+     opt_log = False
+     pre_opt = False
+     pre_opt_stpmax = 0.1
+     pre_opt_iter = 10
+     pre_opt_switch = 2
+     pre_opt_gconv = 3000
+   }
+   parallel {
+     method = *multiprocessing slurm pbs sge lsf threading
+     nproc = None
+     qsub_command = None
+   }
+   output_file_name_prefix = None
+   output_folder_name = "pdb"
+   shared_disk = True
+   rst_file = None
+   dump_gradients = None
+  Default method for xtb is  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o
+
+***********************************************************
+restart info will be stored in /home/lum/xtb_opt_stp_0.3/xtb_opt/pdb/6.rst.pickle
+***********************************************************
+
+start   0 rmsd(b):  0.0178 rws:  1.000 n_fev: 0
+  step:   1 bond rmsd: 0.017776
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.076775
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.144390
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.103697
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.084067
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.062175
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.045957
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.035746
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.029027
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.024033
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.020251
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.017436
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.015411
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.014013
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.013069
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.012425
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.012033
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.011779
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.011612
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.011977
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.011820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.011896
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.011884
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.011934
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.012002
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.011969
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.012039
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.011901
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.011962
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.011827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.011771
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.011570
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.011527
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.011262
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.011277
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.011184
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.011210
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.011182
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.011161
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.011278
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.011155
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.011293
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.011183
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.011286
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.011190
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.011233
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.011268
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.011169
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.011197
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.011205
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.011256
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.011253
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   1 rmsd(b):  0.0113 rws:  1.000 n_fev: 52
+  step:   1 bond rmsd: 0.011253
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.088895
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.088895
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.062948
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.056287
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.047193
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.039145
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.032472
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.027351
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.023452
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.020373
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.017900
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.015944
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.014458
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.013380
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.012627
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.012120
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.011777
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.011551
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.011398
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.011287
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.011206
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.011144
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.011092
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.011056
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.011016
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010984
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010945
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.011013
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010971
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.011044
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.011020
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.011046
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.011003
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.011057
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010993
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.011059
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010981
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010902
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010985
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010899
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.011070
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010971
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010994
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010872
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010906
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010909
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010967
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010947
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010973
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010937
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010895
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   2 rmsd(b):  0.0109 rws:  1.000 n_fev: 104
+  step:   1 bond rmsd: 0.010895
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.087491
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.096285
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.067961
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.061174
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.050680
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.041083
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.033143
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.027459
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.023611
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.020753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.018409
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.016436
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.014802
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.013515
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.012571
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.011917
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.011487
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.011212
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.011030
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010920
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010845
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010799
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010764
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010733
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010732
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010739
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010748
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010725
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010797
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010788
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010815
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010837
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010840
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010776
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010761
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010764
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010776
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010804
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010848
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010917
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010909
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010940
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   3 rmsd(b):  0.0109 rws:  1.000 n_fev: 156
+  step:   1 bond rmsd: 0.010940
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.067271
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.077776
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.054905
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.038728
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.025996
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.019685
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.016546
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.014404
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.012865
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011888
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.011309
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010989
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010763
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010736
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010744
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010762
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010774
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010794
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010845
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010868
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010874
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010862
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010836
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010815
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010768
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010757
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010730
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010749
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010715
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010705
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010713
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010728
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010729
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010733
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010747
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010763
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010771
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010765
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010752
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010762
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010757
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010762
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010745
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010735
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010746
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010754
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   4 rmsd(b):  0.0108 rws:  1.000 n_fev: 208
+  step:   1 bond rmsd: 0.010754
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.038915
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.037637
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.027251
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.022543
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.017458
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.014259
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.012665
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.011822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011348
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011045
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010858
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010760
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010717
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010705
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010714
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010721
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010735
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010747
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010751
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010760
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010762
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010750
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010746
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010740
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010739
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010741
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010739
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010743
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010771
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010774
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010778
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010794
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010775
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010774
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010765
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010763
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010759
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010747
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010786
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010849
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010779
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   5 rmsd(b):  0.0108 rws:  1.000 n_fev: 260
+  step:   1 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.062444
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.062444
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.044660
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.036640
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.029061
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.023564
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.019757
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.016994
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.014954
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.013479
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.012490
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.011851
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.011433
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.011162
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010995
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010880
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010815
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010764
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010741
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010729
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010730
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010743
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010763
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010777
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010783
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010772
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010766
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010762
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010756
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010744
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010736
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010741
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010751
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010727
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010727
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010743
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010744
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010744
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010742
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010739
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010734
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010725
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010724
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010718
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010720
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010719
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010724
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010734
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   6 rmsd(b):  0.0107 rws:  1.000 n_fev: 312
+  step:   1 bond rmsd: 0.010734
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.044277
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.044277
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.032020
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.021503
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.016120
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.013915
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.012604
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.011795
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011303
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011012
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010858
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010782
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010726
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010724
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010726
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010728
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010732
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010736
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010739
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010743
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010746
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010748
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010750
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010750
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010756
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010754
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010748
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010745
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010745
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010744
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010747
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010749
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010749
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010875
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010875
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010799
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010766
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010750
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010741
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010777
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010795
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010846
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010889
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010960
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010978
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.011017
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.011016
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010951
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010938
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   7 rmsd(b):  0.0109 rws:  1.000 n_fev: 366
+  step:   1 bond rmsd: 0.010938
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.031037
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.029942
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.021995
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.020242
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.017418
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.014884
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.012896
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.011694
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011132
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010957
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010937
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010951
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010953
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010951
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010937
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010928
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010918
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010918
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010915
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010914
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010911
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010903
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010900
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010886
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010857
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010860
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010848
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010787
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010783
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010783
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010789
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010839
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010852
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010858
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010864
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010868
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010869
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010863
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   8 rmsd(b):  0.0109 rws:  1.000 n_fev: 418
+  step:   1 bond rmsd: 0.010863
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.046193
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.023091
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.017267
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.014422
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.012547
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011644
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.011068
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010689
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010656
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010668
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010689
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010715
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010740
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010761
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010782
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010796
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010787
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010771
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010761
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010761
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010763
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010767
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010838
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010867
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010877
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010890
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010902
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010929
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.011002
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010961
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010927
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010839
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   9 rmsd(b):  0.0108 rws:  1.000 n_fev: 470
+  step:   1 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.034254
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.034254
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.025937
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.019598
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.015932
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.013997
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.012780
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.012009
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011539
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011220
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.011052
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010950
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010895
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010859
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010802
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010799
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010783
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010789
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010836
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010868
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010881
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010894
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010899
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010900
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010888
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010865
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010851
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010759
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010756
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010757
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010773
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010778
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010780
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010783
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010785
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010776
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010771
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010764
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010766
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010767
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010772
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  10 rmsd(b):  0.0108 rws:  1.000 n_fev: 523
+  step:   1 bond rmsd: 0.010772
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.046076
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.014402
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.012915
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.012021
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.011529
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011233
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.011066
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010963
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010899
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010869
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010806
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010799
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010795
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010791
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010781
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010783
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010787
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010790
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010804
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010840
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010857
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010863
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010871
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010859
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010846
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010798
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010798
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010795
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010829
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.010815
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  11 rmsd(b):  0.0108 rws:  1.000 n_fev: 578
+  step:   1 bond rmsd: 0.010815
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.044258
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.028791
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.021422
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.015747
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.012604
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011324
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.010864
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010676
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010620
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010611
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010633
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010657
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010688
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010712
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010731
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010751
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010768
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010830
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010803
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010806
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010812
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010851
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010859
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010866
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010860
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010844
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010831
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010802
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010794
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010792
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  12 rmsd(b):  0.0108 rws:  1.000 n_fev: 631
+  step:   1 bond rmsd: 0.010792
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.057929
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.017468
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.014821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.013181
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.012200
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011619
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.011301
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.011098
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010992
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010923
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010884
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010855
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010842
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010804
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010840
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010841
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010846
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010829
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010772
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010767
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010762
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010758
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010755
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010750
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010746
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010736
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010741
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010734
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010724
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010736
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010789
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.010788
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  13 rmsd(b):  0.0108 rws:  1.000 n_fev: 686
+  step:   1 bond rmsd: 0.010788
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.060098
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.058767
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.042290
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.031577
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.021495
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.015994
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.013476
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.012186
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011544
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011174
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010977
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010855
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010793
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010758
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010743
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010738
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010743
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010749
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010753
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010757
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010765
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010777
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010799
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010841
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010838
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010838
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010831
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010830
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010812
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010804
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010802
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010802
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  14 rmsd(b):  0.0108 rws:  1.000 n_fev: 738
+  step:   1 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.054814
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.014970
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.012960
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.011838
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.011297
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011020
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.010885
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010802
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010793
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010794
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010796
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010799
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010803
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010810
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010814
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010830
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010836
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010847
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010852
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010857
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010861
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010859
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010853
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010849
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  15 rmsd(b):  0.0108 rws:  1.000 n_fev: 790
+  step:   1 bond rmsd: 0.010813
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.058826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.027442
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.021097
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.016686
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.014117
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.012654
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.011834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.011379
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011148
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011005
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010931
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010888
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010859
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010837
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010829
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010829
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010831
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010837
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010838
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010840
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010847
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010849
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010850
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010854
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010852
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  16 rmsd(b):  0.0109 rws:  1.000 n_fev: 844
+  step:   1 bond rmsd: 0.010852
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.074787
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.018399
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.014663
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.012469
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.011432
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011011
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.010830
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010760
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010751
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010760
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010776
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010786
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010831
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010840
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010841
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010842
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010844
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010844
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010840
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010838
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010830
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010829
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  17 rmsd(b):  0.0108 rws:  1.000 n_fev: 897
+  step:   1 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.040407
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.017465
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.014412
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.012673
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.011796
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.011298
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.011052
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010930
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010868
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010814
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010808
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010809
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010811
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010812
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010812
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010814
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010830
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010846
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010849
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010849
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010849
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010848
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010846
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010839
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010784
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010794
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010805
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010814
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010817
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010800
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010807
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.010621
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  56 bond rmsd: 0.010706
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  57 bond rmsd: 0.010734
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  58 bond rmsd: 0.010760
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  18 rmsd(b):  0.0108 rws:  1.000 n_fev: 955
+  step:   1 bond rmsd: 0.010760
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.089978
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.031750
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.024068
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.019652
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.016490
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.014457
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.013111
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.012261
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011718
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011393
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.011173
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.011042
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010964
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010911
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010878
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010855
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010841
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010816
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010847
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010846
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010845
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010843
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010841
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010839
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010837
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010835
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010826
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010825
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010822
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010820
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010821
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010824
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010828
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010836
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010839
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010839
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010842
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010842
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.010842
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  19 rmsd(b):  0.0108 rws:  1.000 n_fev: 1010
+  step:   1 bond rmsd: 0.010842
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.075109
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.011002
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.010818
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.010759
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.010751
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.010757
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.010775
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.010793
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.010801
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.010812
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010819
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.010823
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.010827
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  56 bond rmsd: 0.010833
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  57 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  58 bond rmsd: 0.010834
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  59 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  60 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  61 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  62 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  63 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  64 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  65 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  66 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  67 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  68 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  69 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  70 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  71 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  72 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  73 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  74 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  75 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  76 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  77 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  78 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  79 bond rmsd: 0.010832
+Running:  /usr/local/xtb//bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle  20 rmsd(b):  0.0108 rws:  1.000 n_fev: 1089
+ Convergence at micro_cycle: 20
+See 6_refined.pdb in pdb folder.
+Time: 2185.2121

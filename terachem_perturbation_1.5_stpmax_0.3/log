@@ -1,0 +1,22 @@
+1.5/
+running command:
+qr.refine .././perturbed/1.5/0.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 0.log
+running command:
+qr.refine .././perturbed/1.5/1.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 1.log
+running command:
+qr.refine .././perturbed/1.5/2.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 2.log
+running command:
+qr.refine .././perturbed/1.5/3.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 3.log
+running command:
+qr.refine .././perturbed/1.5/4.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 4.log
+running command:
+qr.refine .././perturbed/1.5/5.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 5.log
+running command:
+qr.refine .././perturbed/1.5/6.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 6.log
+running command:
+qr.refine .././perturbed/1.5/7.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 7.log
+running command:
+qr.refine .././perturbed/1.5/8.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 8.log
+running command:
+qr.refine .././perturbed/1.5/9.pdb mode=opt stpmax=0.3 gradient_only=true clustering=false use_convergence_test=true rmsd_tolerance=0.001 restraints=qm engine_name=terachem basis=6-31g > 9.log
+Time: 1836187.1769 s

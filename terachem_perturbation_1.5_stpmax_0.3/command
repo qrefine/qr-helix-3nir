@@ -1,0 +1,1 @@
+nohup phenix.python run_opt.py terachem > log 2>&1 &

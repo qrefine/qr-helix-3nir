@@ -16,6 +16,7 @@ base=[
     "clustering=false",
     "use_convergence_test=true",
     "rmsd_tolerance=0.001",
+    "number_of_micro_cycles=25"
     ]
 
 cmd_cctbx    = " ".join(base+["restraints=cctbx","> %s.log"])
@@ -51,9 +52,10 @@ def run(args):
       cmd_full = cmd%(file_name,bn)
       print "running command:\n%s"%(cmd_full)
       easy_run.call(cmd_full)
-      easy_run.call("mv pdb/%s_refined.pdb %s/%s.pdb"%(bn,rmsd_dir,bn))
+      easy_run.call("cp pdb/%s_refined.pdb %s/%s.pdb"%(bn,rmsd_dir,bn))
       easy_run.call("mv %s.log %s"%(bn,rmsd_dir))
-      easy_run.call("rm -rf pdb")
+      easy_run.call("mv pdb %s/%s_pdb"%(rmsd_dir,bn))
+
 
 if __name__ == "__main__":
   t0 = time.time()

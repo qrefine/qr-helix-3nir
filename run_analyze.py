@@ -54,7 +54,7 @@ def run():
   tmp_cntr1=0
   print "Hbond analysis"
   print "model     min     max     mean   recovered  bond_rmsd  rama_favored clashscore"
-  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt_default/","./xtb_opt_water/","./ani_opt/","./terachem_opt_water/","./mopac_opt_water/"]:
+  for sub_root in ["./perturbed/","./cctbx_opt/","./xtb_opt_stpmax_0.3/","./xtb_opt_stpmax_0.4/","./xtb_opt_stpmax_0.5/","./terachem_opt_final/"]:
     print sub_root
     for rmsd_dir in rmsd_dirs:
       h_bonds    = flex.double()
@@ -67,7 +67,7 @@ def run():
         if(not os.path.exists(file_name)): assert 0, file_name
         model = get_model(file_name)
         assert ref.h.is_similar_hierarchy(model.get_hierarchy())
-        g = model.geometry_statistics(use_hydrogens=True).result()
+        g = model.geometry_statistics(use_hydrogens=False).result()
         rmsd_bonds.append(g.bond.mean)
         rama_fav.append(g.ramachandran.favored)
         clashscore.append(g.clash.score)

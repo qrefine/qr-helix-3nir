@@ -1,0 +1,2779 @@
+Starting Q|R
+version:   v1.0-114-g3318f9  
+Running refinement
+   input {
+     xray_data {
+       file_name = None
+       labels = None
+       high_resolution = None
+       low_resolution = None
+       outliers_rejection = True
+       french_wilson_scale = True
+       french_wilson {
+         max_bins = 60
+         min_bin_size = 40
+       }
+       sigma_fobs_rejection_criterion = None
+       sigma_iobs_rejection_criterion = None
+       ignore_all_zeros = True
+       force_anomalous_flag_to_be_equal_to = None
+       convert_to_non_anomalous_if_ratio_pairs_lone_less_than_threshold = 0.5
+       r_free_flags {
+         file_name = None
+         label = None
+         test_flag_value = None
+         ignore_r_free_flags = False
+         disable_suitability_test = False
+         ignore_pdb_hexdigest = False
+         generate = False
+         fraction = 0.1
+         max_free = 2000
+         lattice_symmetry_max_delta = 5
+         use_lattice_symmetry = True
+         use_dataman_shells = False
+         n_shells = 20
+       }
+     }
+     pdb {
+       file_name = None
+     }
+     monomers {
+       file_name = None
+     }
+     maps {
+       map_file_name = None
+       d_min = None
+       map_coefficients_file_name = None
+       map_coefficients_label = None
+     }
+     sequence = None
+     scattering_table = wk1995 it1992 *n_gaussian neutron electron
+     wavelength = None
+     energy = None
+     twin_law = Auto
+   }
+   max_atoms = 15000
+   debug = False
+   cluster {
+     charge_cutoff = 8.0
+     clustering = false
+     charge_embedding = False
+     two_buffers = False
+     maxnum_residues_in_cluster = 15
+     clustering_method = gnc *bcc
+     altloc_method = *average subtract
+     g_scan = 10 15 20
+     g_mode = None
+   }
+   restraints = cctbx *qm
+   quantum {
+     engine_name = mopac ani torchani *terachem turbomole pyscf orca gaussian \
+                   xtb
+     charge = None
+     basis = 6-31g
+     method = Auto
+     memory = None
+     nproc = None
+     qm_addon = gcp dftd3 gcp-d3
+     qm_addon_method = None
+   }
+   refine {
+     dry_run = False
+     sf_algorithm = *direct fft
+     refinement_target_name = *ml ls_wunit_k1
+     mode = *opt refine gtest
+     number_of_macro_cycles = 1
+     number_of_weight_search_cycles = 50
+     number_of_refine_cycles = 5
+     number_of_micro_cycles = 25
+     data_weight = None
+     choose_best_use_r_work = False
+     skip_weight_search = False
+     adjust_restraints_weight_scale_value = 2
+     max_iterations_weight = 50
+     max_iterations_refine = 50
+     use_ase_lbfgs = False
+     line_search = True
+     stpmax = 0.5
+     gradient_only = true
+     update_all_scales = True
+     refine_sites = True
+     refine_adp = False
+     restraints_weight_scale = 1.0
+     shake_sites = False
+     use_convergence_test = true
+     max_bond_rmsd = 0.03
+     max_r_work_r_free_gap = 5.0
+     r_tolerance = 0.001
+     rmsd_tolerance = 0.001
+     opt_log = False
+     pre_opt = False
+     pre_opt_stpmax = 0.1
+     pre_opt_iter = 10
+     pre_opt_switch = 2
+     pre_opt_gconv = 3000
+   }
+   parallel {
+     method = *multiprocessing slurm pbs sge lsf threading
+     nproc = None
+     qsub_command = None
+   }
+   output_file_name_prefix = None
+   output_folder_name = "pdb"
+   shared_disk = True
+   rst_file = None
+   dump_gradients = None
+
+Setting QM defaults
+  Setting QM method to HF
+
+
+***********************************************************
+restart info will be stored in /home/lum/terachem_3nir_opt_6_0.5/terachem_opt/pdb/0.rst.pickle
+***********************************************************
+
+  No function available to set charge to 2
+  No function available to set basis to 6-31g
+  No function available to set method to HF
+start   0 rmsd(b):  0.0192 rws:  1.000 n_fev: 0
+  step:   1 bond rmsd: 0.019166
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.069592
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.204631
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.104126
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.075704
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.042085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.024681
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.017930
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.014935
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.014287
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.014250
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.014512
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.014628
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.014789
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.014665
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014325
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014153
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014143
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014310
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014180
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014358
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014325
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.014241
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.014616
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014263
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014394
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014669
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.014651
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.014904
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.014923
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.014728
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.014677
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.014734
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.014553
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.014606
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.014694
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.014794
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.014797
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.014885
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.014773
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.014710
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.014780
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.014558
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.014473
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.014382
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.014255
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.014292
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.014189
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.014247
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.014384
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.014499
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   1 rmsd(b):  0.0145 rws:  1.000 n_fev: 52
+  step:   1 bond rmsd: 0.014499
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.040161
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.092919
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.048192
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.023148
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.016000
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.014915
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.014698
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.014728
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.014791
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.014799
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.014794
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.014759
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.014736
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.014630
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014584
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014569
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014429
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014473
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014550
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014705
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014813
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014877
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015291
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015138
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014952
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014881
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014716
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.014717
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.014613
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.014871
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.014730
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.014677
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.014664
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.014676
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.014701
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.014706
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.014785
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.014769
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.014792
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.014788
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.014783
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.014826
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.014746
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.014794
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.014829
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.014725
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.014781
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.014825
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.014877
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.014862
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.014970
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   2 rmsd(b):  0.0150 rws:  1.000 n_fev: 104
+  step:   1 bond rmsd: 0.014970
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.097887
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.112014
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.055316
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.045385
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.030320
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.022354
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.018499
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.016568
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015397
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.014949
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.014801
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.014781
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.014796
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.014826
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014832
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014853
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014832
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014841
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014866
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014806
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014851
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014902
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.014914
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.014948
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014962
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014915
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014849
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.014776
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.014509
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.014454
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.014425
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.014357
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.014395
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.014515
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.014670
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.014669
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.014748
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.014790
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.014886
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.014961
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.014963
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.014984
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.014860
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.014820
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.014833
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.014783
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.014811
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.014832
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.014830
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.014831
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.014825
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  53 bond rmsd: 0.014808
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   3 rmsd(b):  0.0148 rws:  1.000 n_fev: 157
+  step:   1 bond rmsd: 0.014808
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.069191
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.134518
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.069625
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.031508
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.018753
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015799
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.014690
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.014632
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.014798
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.014901
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.014931
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.014913
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.014890
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.014843
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014852
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014796
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014782
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014780
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014763
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014800
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014786
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014903
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.014905
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.014880
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014913
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014890
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014822
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.014811
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.014798
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.014826
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.014834
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.014852
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.014901
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.014900
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.014915
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.014900
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.014844
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.014862
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.014801
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.014706
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.014790
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.014737
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.014761
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.014759
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.014778
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.014839
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.014860
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.014903
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.014913
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.014946
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.014949
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   4 rmsd(b):  0.0149 rws:  1.000 n_fev: 209
+  step:   1 bond rmsd: 0.014949
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.083857
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.048821
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.027593
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.020885
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.017131
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015762
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015252
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015010
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.014981
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.014962
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.014943
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.014925
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.014907
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014881
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014852
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014832
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014802
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014761
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014739
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014712
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014694
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.014632
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.014614
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014586
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014571
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014545
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.014583
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.014597
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.014640
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.014848
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.014876
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015139
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015206
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015184
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015180
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015126
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015045
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015007
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.014978
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.014943
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.014952
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.014945
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.014976
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.014980
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.014987
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015005
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015002
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   5 rmsd(b):  0.0150 rws:  1.000 n_fev: 261
+  step:   1 bond rmsd: 0.015002
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.068114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.089055
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.047144
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.027212
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.019951
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.017497
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.016218
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015661
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015415
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015283
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015180
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015110
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015031
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014994
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014977
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014963
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014950
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014946
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014929
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014935
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014933
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.014967
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.014966
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014965
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014987
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014986
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015000
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015035
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015016
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015027
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015004
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.014986
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.014980
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.014932
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.014912
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.014906
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.014882
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.014893
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.014877
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.014883
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.014918
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.014942
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.014960
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015011
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015028
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015032
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015053
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015029
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015028
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   6 rmsd(b):  0.0150 rws:  1.000 n_fev: 313
+  step:   1 bond rmsd: 0.015028
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.055102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.051223
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.029275
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.019271
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.016306
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015519
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015256
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015163
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015090
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015044
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015006
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.014986
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014977
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014971
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.014965
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.014963
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.014966
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.014963
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.014966
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.014969
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.014963
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014969
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014967
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.014955
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.014966
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.014953
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.014965
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.014986
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.014972
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.014998
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.014989
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.014981
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015000
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.014970
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.014978
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.014998
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.014986
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015005
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015005
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015010
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015031
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015026
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015020
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015020
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015016
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015019
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015017
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   7 rmsd(b):  0.0150 rws:  1.000 n_fev: 365
+  step:   1 bond rmsd: 0.015017
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.057077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.018871
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.016062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015226
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015020
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015021
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015022
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015021
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015030
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015027
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015028
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015032
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015036
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015042
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015045
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015052
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015057
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015048
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015053
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015049
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015054
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015039
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015034
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015031
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015033
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015015
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015007
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015033
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015001
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015031
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015040
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015052
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015082
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015043
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015040
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015043
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015027
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   8 rmsd(b):  0.0150 rws:  1.000 n_fev: 417
+  step:   1 bond rmsd: 0.015027
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.047297
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.016490
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015595
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015268
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015145
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015054
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015048
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015043
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015039
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015034
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015030
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015025
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015024
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015008
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015016
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015061
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015093
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015035
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015039
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015034
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015037
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015035
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015040
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015026
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015028
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015039
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015038
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015052
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015055
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle   9 rmsd(b):  0.0151 rws:  1.000 n_fev: 469
+  step:   1 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.050424
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015279
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015049
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015052
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015057
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015064
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015056
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015048
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015040
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015030
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015019
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015005
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.014997
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.014993
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015009
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015006
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015010
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015014
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015020
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015029
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015026
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015037
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015043
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015037
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015041
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015045
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015048
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015055
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015046
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015049
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015050
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015050
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015050
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015049
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015047
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  10 rmsd(b):  0.0150 rws:  1.000 n_fev: 521
+  step:   1 bond rmsd: 0.015047
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.082947
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015478
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015193
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015061
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015056
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015054
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015053
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015052
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015050
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015056
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.014994
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.014996
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015023
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015045
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015127
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015165
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015154
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015131
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015090
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015044
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015028
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015036
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015030
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015030
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015030
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015029
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015029
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015039
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.014930
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.014953
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.014990
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  53 bond rmsd: 0.015018
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  54 bond rmsd: 0.015042
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  55 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  11 rmsd(b):  0.0151 rws:  1.000 n_fev: 576
+  step:   1 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.070634
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015646
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.014930
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.014861
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.014920
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.014974
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015009
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015029
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015042
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015176
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015166
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015124
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015096
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015093
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015054
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015064
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015093
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  53 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  12 rmsd(b):  0.0151 rws:  1.000 n_fev: 629
+  step:   1 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.080184
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.016067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015503
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015267
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015166
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015041
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015052
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015042
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015094
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015125
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015096
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015124
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015090
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015064
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  53 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  13 rmsd(b):  0.0151 rws:  1.000 n_fev: 682
+  step:   1 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.059192
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.014946
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015001
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015034
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015061
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015048
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015053
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015061
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015056
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015059
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015064
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015082
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  14 rmsd(b):  0.0151 rws:  1.000 n_fev: 734
+  step:   1 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.046978
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015138
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015067
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015071
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015066
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015061
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015047
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015039
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015042
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015062
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015068
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015090
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015126
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015065
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015060
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015055
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015058
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  15 rmsd(b):  0.0151 rws:  1.000 n_fev: 786
+  step:   1 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.098364
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015031
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015051
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015063
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015073
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015074
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015078
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015084
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  16 rmsd(b):  0.0151 rws:  1.000 n_fev: 838
+  step:   1 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.034185
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015231
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015141
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015082
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015084
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015090
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015090
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015097
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015082
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015069
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015075
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015076
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015081
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015084
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  17 rmsd(b):  0.0151 rws:  1.000 n_fev: 890
+  step:   1 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.051396
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015086
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015084
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015092
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015089
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015084
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015084
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015088
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015094
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015123
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015138
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015135
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015127
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015087
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015077
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015080
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015072
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015079
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  53 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  18 rmsd(b):  0.0151 rws:  1.000 n_fev: 943
+  step:   1 bond rmsd: 0.015085
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.068886
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015337
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015178
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015124
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015094
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015094
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015093
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015094
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015094
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015097
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015096
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015093
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015097
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015097
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015096
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  19 rmsd(b):  0.0151 rws:  1.000 n_fev: 995
+  step:   1 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.071923
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015070
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015083
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015091
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015095
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015097
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  20 rmsd(b):  0.0151 rws:  1.000 n_fev: 1047
+  step:   1 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.085650
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015141
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015122
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015097
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015096
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015100
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015101
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015110
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  21 rmsd(b):  0.0151 rws:  1.000 n_fev: 1099
+  step:   1 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.084824
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015105
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015110
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  22 rmsd(b):  0.0151 rws:  1.000 n_fev: 1151
+  step:   1 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.086523
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015121
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015110
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015110
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  23 rmsd(b):  0.0151 rws:  1.000 n_fev: 1203
+  step:   1 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.050866
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015167
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015136
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015122
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015122
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015121
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015120
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015121
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015099
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015122
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  24 rmsd(b):  0.0151 rws:  1.000 n_fev: 1255
+  step:   1 bond rmsd: 0.015112
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   2 bond rmsd: 0.094760
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   3 bond rmsd: 0.015157
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   4 bond rmsd: 0.015136
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   5 bond rmsd: 0.015126
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   6 bond rmsd: 0.015121
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   7 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   8 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:   9 bond rmsd: 0.015115
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  10 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  11 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  12 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  13 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  14 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  15 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  16 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  17 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  18 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  19 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  20 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  21 bond rmsd: 0.015114
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  22 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  23 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  24 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  25 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  26 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  27 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  28 bond rmsd: 0.015098
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  29 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  30 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  31 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  32 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  33 bond rmsd: 0.015106
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  34 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  35 bond rmsd: 0.015107
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  36 bond rmsd: 0.015103
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  37 bond rmsd: 0.015108
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  38 bond rmsd: 0.015102
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  39 bond rmsd: 0.015104
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  40 bond rmsd: 0.015110
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  41 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  42 bond rmsd: 0.015113
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  43 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  44 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  45 bond rmsd: 0.015118
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  46 bond rmsd: 0.015121
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  47 bond rmsd: 0.015119
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  48 bond rmsd: 0.015121
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  49 bond rmsd: 0.015117
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  50 bond rmsd: 0.015116
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  51 bond rmsd: 0.015111
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+  step:  52 bond rmsd: 0.015109
+/home/lum/qm/TeraChem/bin/terachem ./ase/tmp_ase.sp  >     ./ase/tmp_ase.out  2>&1
+micro_cycle  25 rmsd(b):  0.0151 rws:  1.000 n_fev: 1307
+See 0_refined.pdb in pdb folder.
+Time: 102679.5672

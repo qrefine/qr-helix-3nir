@@ -1,0 +1,1358 @@
+Starting Q|R
+version:   v1.0-114-g3318f9  
+Running refinement
+   input {
+     xray_data {
+       file_name = None
+       labels = None
+       high_resolution = None
+       low_resolution = None
+       outliers_rejection = True
+       french_wilson_scale = True
+       french_wilson {
+         max_bins = 60
+         min_bin_size = 40
+       }
+       sigma_fobs_rejection_criterion = None
+       sigma_iobs_rejection_criterion = None
+       ignore_all_zeros = True
+       force_anomalous_flag_to_be_equal_to = None
+       convert_to_non_anomalous_if_ratio_pairs_lone_less_than_threshold = 0.5
+       r_free_flags {
+         file_name = None
+         label = None
+         test_flag_value = None
+         ignore_r_free_flags = False
+         disable_suitability_test = False
+         ignore_pdb_hexdigest = False
+         generate = False
+         fraction = 0.1
+         max_free = 2000
+         lattice_symmetry_max_delta = 5
+         use_lattice_symmetry = True
+         use_dataman_shells = False
+         n_shells = 20
+       }
+     }
+     pdb {
+       file_name = None
+     }
+     monomers {
+       file_name = None
+     }
+     maps {
+       map_file_name = None
+       d_min = None
+       map_coefficients_file_name = None
+       map_coefficients_label = None
+     }
+     sequence = None
+     scattering_table = wk1995 it1992 *n_gaussian neutron electron
+     wavelength = None
+     energy = None
+     twin_law = Auto
+   }
+   max_atoms = 15000
+   debug = False
+   cluster {
+     charge_cutoff = 8.0
+     clustering = false
+     charge_embedding = False
+     two_buffers = False
+     maxnum_residues_in_cluster = 15
+     clustering_method = gnc *bcc
+     altloc_method = *average subtract
+     g_scan = 10 15 20
+     g_mode = None
+   }
+   restraints = cctbx *qm
+   quantum {
+     engine_name = mopac ani torchani terachem turbomole pyscf orca gaussian \
+                   *xtb
+     charge = None
+     basis = Auto
+     method = Auto
+     memory = None
+     nproc = 8
+     qm_addon = gcp dftd3 gcp-d3
+     qm_addon_method = None
+   }
+   refine {
+     dry_run = False
+     sf_algorithm = *direct fft
+     refinement_target_name = *ml ls_wunit_k1
+     mode = *opt refine gtest
+     number_of_macro_cycles = 1
+     number_of_weight_search_cycles = 50
+     number_of_refine_cycles = 5
+     number_of_micro_cycles = 2
+     data_weight = None
+     choose_best_use_r_work = False
+     skip_weight_search = False
+     adjust_restraints_weight_scale_value = 2
+     max_iterations_weight = 50
+     max_iterations_refine = 300
+     use_ase_lbfgs = False
+     line_search = True
+     stpmax = 0.7
+     gradient_only = true
+     update_all_scales = True
+     refine_sites = True
+     refine_adp = False
+     restraints_weight_scale = 1.0
+     shake_sites = False
+     use_convergence_test = true
+     max_bond_rmsd = 0.03
+     max_r_work_r_free_gap = 5.0
+     r_tolerance = 0.001
+     rmsd_tolerance = 0.001
+     opt_log = False
+     pre_opt = False
+     pre_opt_stpmax = 0.1
+     pre_opt_iter = 10
+     pre_opt_switch = 2
+     pre_opt_gconv = 3000
+   }
+   parallel {
+     method = *multiprocessing slurm pbs sge lsf threading
+     nproc = None
+     qsub_command = None
+   }
+   output_file_name_prefix = None
+   output_folder_name = "pdb"
+   shared_disk = True
+   rst_file = None
+   dump_gradients = None
+  Default method for xtb is  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o
+
+***********************************************************
+restart info will be stored in /home/lum/xtb_opt_final/1.2/xtb_opt/pdb/4.rst.pickle
+***********************************************************
+
+start   0 rmsd(b):  0.0194 rws:  1.000 n_fev: 0
+  step:   1 bond rmsd: 0.019397
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.089643
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.300618
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.086403
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.078251
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.042545
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.027303
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.020264
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.016206
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.014755
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.014303
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.014632
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.013907
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.014190
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.014044
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.014029
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.013820
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.014121
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.013721
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.013292
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.013356
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.012962
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.013134
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.013357
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.013387
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.013477
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.013379
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.013223
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.013203
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.013000
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.013114
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.012832
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.012885
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.013045
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.013065
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.013397
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.013093
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.013023
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.012858
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.012639
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.012504
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.012470
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.012347
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.012440
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.012231
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.012445
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.012179
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.012075
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.011817
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.011872
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.011949
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.012166
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.012264
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.012322
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.012264
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  56 bond rmsd: 0.012259
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  57 bond rmsd: 0.012173
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  58 bond rmsd: 0.012159
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  59 bond rmsd: 0.012190
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  60 bond rmsd: 0.012089
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  61 bond rmsd: 0.012101
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  62 bond rmsd: 0.012009
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  63 bond rmsd: 0.011989
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  64 bond rmsd: 0.012006
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  65 bond rmsd: 0.011860
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  66 bond rmsd: 0.011870
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  67 bond rmsd: 0.011754
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  68 bond rmsd: 0.011703
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  69 bond rmsd: 0.011732
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  70 bond rmsd: 0.011619
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  71 bond rmsd: 0.011782
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  72 bond rmsd: 0.011709
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  73 bond rmsd: 0.011797
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  74 bond rmsd: 0.011769
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  75 bond rmsd: 0.011842
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  76 bond rmsd: 0.011799
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  77 bond rmsd: 0.011892
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  78 bond rmsd: 0.011726
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  79 bond rmsd: 0.011741
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  80 bond rmsd: 0.011665
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  81 bond rmsd: 0.011783
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  82 bond rmsd: 0.011666
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  83 bond rmsd: 0.011703
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  84 bond rmsd: 0.011690
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  85 bond rmsd: 0.011839
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  86 bond rmsd: 0.011783
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  87 bond rmsd: 0.011802
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  88 bond rmsd: 0.011744
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  89 bond rmsd: 0.011787
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  90 bond rmsd: 0.011832
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  91 bond rmsd: 0.011821
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  92 bond rmsd: 0.011888
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  93 bond rmsd: 0.011789
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  94 bond rmsd: 0.011687
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  95 bond rmsd: 0.011699
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  96 bond rmsd: 0.011626
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  97 bond rmsd: 0.011647
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  98 bond rmsd: 0.011721
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  99 bond rmsd: 0.011743
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 100 bond rmsd: 0.011742
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 101 bond rmsd: 0.011678
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 102 bond rmsd: 0.011707
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 103 bond rmsd: 0.011658
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 104 bond rmsd: 0.011693
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 105 bond rmsd: 0.011673
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 106 bond rmsd: 0.011834
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 107 bond rmsd: 0.011768
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 108 bond rmsd: 0.011716
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 109 bond rmsd: 0.011681
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 110 bond rmsd: 0.011702
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 111 bond rmsd: 0.011720
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 112 bond rmsd: 0.011864
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 113 bond rmsd: 0.011751
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 114 bond rmsd: 0.011758
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 115 bond rmsd: 0.011808
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 116 bond rmsd: 0.011826
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 117 bond rmsd: 0.011775
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 118 bond rmsd: 0.011756
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 119 bond rmsd: 0.011659
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 120 bond rmsd: 0.011727
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 121 bond rmsd: 0.011548
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 122 bond rmsd: 0.011527
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 123 bond rmsd: 0.011469
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 124 bond rmsd: 0.011617
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 125 bond rmsd: 0.011652
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 126 bond rmsd: 0.011693
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 127 bond rmsd: 0.011703
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 128 bond rmsd: 0.011815
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 129 bond rmsd: 0.011865
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 130 bond rmsd: 0.011873
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 131 bond rmsd: 0.011878
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 132 bond rmsd: 0.011827
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 133 bond rmsd: 0.011753
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 134 bond rmsd: 0.011758
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 135 bond rmsd: 0.011589
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 136 bond rmsd: 0.011636
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 137 bond rmsd: 0.011718
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 138 bond rmsd: 0.011844
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 139 bond rmsd: 0.011912
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 140 bond rmsd: 0.011968
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 141 bond rmsd: 0.011962
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 142 bond rmsd: 0.011888
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 143 bond rmsd: 0.011795
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 144 bond rmsd: 0.011702
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 145 bond rmsd: 0.011752
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 146 bond rmsd: 0.011905
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 147 bond rmsd: 0.011966
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 148 bond rmsd: 0.012045
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 149 bond rmsd: 0.012049
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 150 bond rmsd: 0.011999
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 151 bond rmsd: 0.011849
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 152 bond rmsd: 0.011761
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 153 bond rmsd: 0.011673
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 154 bond rmsd: 0.011675
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 155 bond rmsd: 0.011689
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 156 bond rmsd: 0.011792
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 157 bond rmsd: 0.011709
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 158 bond rmsd: 0.011728
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 159 bond rmsd: 0.011806
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 160 bond rmsd: 0.011820
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 161 bond rmsd: 0.011789
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 162 bond rmsd: 0.011761
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 163 bond rmsd: 0.011683
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 164 bond rmsd: 0.011686
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 165 bond rmsd: 0.011742
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 166 bond rmsd: 0.011853
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 167 bond rmsd: 0.011867
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 168 bond rmsd: 0.011850
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 169 bond rmsd: 0.011767
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 170 bond rmsd: 0.011711
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 171 bond rmsd: 0.011734
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 172 bond rmsd: 0.011787
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 173 bond rmsd: 0.011813
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 174 bond rmsd: 0.011829
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 175 bond rmsd: 0.011790
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 176 bond rmsd: 0.011740
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 177 bond rmsd: 0.011655
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 178 bond rmsd: 0.011662
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 179 bond rmsd: 0.011674
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 180 bond rmsd: 0.011737
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 181 bond rmsd: 0.011777
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 182 bond rmsd: 0.011699
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 183 bond rmsd: 0.011631
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 184 bond rmsd: 0.011535
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 185 bond rmsd: 0.011500
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 186 bond rmsd: 0.011481
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 187 bond rmsd: 0.011541
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 188 bond rmsd: 0.011567
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 189 bond rmsd: 0.011625
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 190 bond rmsd: 0.011661
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 191 bond rmsd: 0.011698
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 192 bond rmsd: 0.011706
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 193 bond rmsd: 0.011685
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 194 bond rmsd: 0.011651
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 195 bond rmsd: 0.011652
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 196 bond rmsd: 0.011610
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 197 bond rmsd: 0.011623
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 198 bond rmsd: 0.011604
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 199 bond rmsd: 0.011617
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 200 bond rmsd: 0.011633
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 201 bond rmsd: 0.011614
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 202 bond rmsd: 0.011652
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 203 bond rmsd: 0.011588
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 204 bond rmsd: 0.011553
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 205 bond rmsd: 0.011513
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 206 bond rmsd: 0.011470
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 207 bond rmsd: 0.011457
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 208 bond rmsd: 0.011453
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 209 bond rmsd: 0.011468
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 210 bond rmsd: 0.011493
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 211 bond rmsd: 0.011498
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 212 bond rmsd: 0.011500
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 213 bond rmsd: 0.011510
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 214 bond rmsd: 0.011522
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 215 bond rmsd: 0.011515
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 216 bond rmsd: 0.011502
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 217 bond rmsd: 0.011458
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 218 bond rmsd: 0.011436
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 219 bond rmsd: 0.011438
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 220 bond rmsd: 0.011410
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 221 bond rmsd: 0.011450
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 222 bond rmsd: 0.011453
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 223 bond rmsd: 0.011476
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 224 bond rmsd: 0.011454
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 225 bond rmsd: 0.011446
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 226 bond rmsd: 0.011343
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 227 bond rmsd: 0.011312
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 228 bond rmsd: 0.011282
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 229 bond rmsd: 0.011269
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 230 bond rmsd: 0.011275
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 231 bond rmsd: 0.011488
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 232 bond rmsd: 0.011409
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 233 bond rmsd: 0.011422
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 234 bond rmsd: 0.011468
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 235 bond rmsd: 0.011572
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 236 bond rmsd: 0.011548
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 237 bond rmsd: 0.011332
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 238 bond rmsd: 0.011191
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 239 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 240 bond rmsd: 0.010983
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 241 bond rmsd: 0.011095
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 242 bond rmsd: 0.011295
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 243 bond rmsd: 0.011270
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 244 bond rmsd: 0.011388
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 245 bond rmsd: 0.011260
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 246 bond rmsd: 0.011278
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 247 bond rmsd: 0.011250
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 248 bond rmsd: 0.011238
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 249 bond rmsd: 0.011100
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 250 bond rmsd: 0.011129
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 251 bond rmsd: 0.011059
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 252 bond rmsd: 0.011067
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 253 bond rmsd: 0.010977
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 254 bond rmsd: 0.011032
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 255 bond rmsd: 0.010938
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 256 bond rmsd: 0.010994
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 257 bond rmsd: 0.011012
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 258 bond rmsd: 0.011033
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 259 bond rmsd: 0.010964
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 260 bond rmsd: 0.011026
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 261 bond rmsd: 0.010935
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 262 bond rmsd: 0.011002
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 263 bond rmsd: 0.010880
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 264 bond rmsd: 0.010898
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 265 bond rmsd: 0.010860
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 266 bond rmsd: 0.010899
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 267 bond rmsd: 0.010920
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 268 bond rmsd: 0.010949
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 269 bond rmsd: 0.010907
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 270 bond rmsd: 0.010924
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 271 bond rmsd: 0.010861
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 272 bond rmsd: 0.010876
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 273 bond rmsd: 0.010878
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 274 bond rmsd: 0.010837
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 275 bond rmsd: 0.010852
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 276 bond rmsd: 0.010808
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 277 bond rmsd: 0.010867
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 278 bond rmsd: 0.010834
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 279 bond rmsd: 0.010832
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 280 bond rmsd: 0.010888
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 281 bond rmsd: 0.010852
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 282 bond rmsd: 0.010869
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 283 bond rmsd: 0.010974
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 284 bond rmsd: 0.010929
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 285 bond rmsd: 0.010943
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 286 bond rmsd: 0.010929
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 287 bond rmsd: 0.010961
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 288 bond rmsd: 0.010943
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 289 bond rmsd: 0.010940
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 290 bond rmsd: 0.010910
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 291 bond rmsd: 0.011006
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 292 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 293 bond rmsd: 0.010920
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 294 bond rmsd: 0.010917
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 295 bond rmsd: 0.010982
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 296 bond rmsd: 0.011050
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 297 bond rmsd: 0.011152
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 298 bond rmsd: 0.011156
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 299 bond rmsd: 0.011118
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 300 bond rmsd: 0.011164
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 301 bond rmsd: 0.011151
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 302 bond rmsd: 0.011149
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 303 bond rmsd: 0.011172
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   1 rmsd(b):  0.0112 rws:  1.000 n_fev: 303
+  step:   1 bond rmsd: 0.011172
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   2 bond rmsd: 0.061819
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   3 bond rmsd: 0.145116
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   4 bond rmsd: 0.049086
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   5 bond rmsd: 0.021951
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   6 bond rmsd: 0.016021
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   7 bond rmsd: 0.013452
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   8 bond rmsd: 0.011813
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:   9 bond rmsd: 0.011288
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  10 bond rmsd: 0.011079
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  11 bond rmsd: 0.011055
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  12 bond rmsd: 0.010972
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  13 bond rmsd: 0.011011
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  14 bond rmsd: 0.011053
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  15 bond rmsd: 0.011040
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  16 bond rmsd: 0.011094
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  17 bond rmsd: 0.011057
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  18 bond rmsd: 0.011041
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  19 bond rmsd: 0.010968
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  20 bond rmsd: 0.011040
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  21 bond rmsd: 0.011001
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  22 bond rmsd: 0.010969
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  23 bond rmsd: 0.010908
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  24 bond rmsd: 0.010894
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  25 bond rmsd: 0.010893
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  26 bond rmsd: 0.010933
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  27 bond rmsd: 0.010952
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  28 bond rmsd: 0.010998
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  29 bond rmsd: 0.010933
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  30 bond rmsd: 0.010926
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  31 bond rmsd: 0.010879
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  32 bond rmsd: 0.010876
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  33 bond rmsd: 0.010860
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  34 bond rmsd: 0.010863
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  35 bond rmsd: 0.010860
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  36 bond rmsd: 0.010858
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  37 bond rmsd: 0.010825
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  38 bond rmsd: 0.010821
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  39 bond rmsd: 0.010826
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  40 bond rmsd: 0.010813
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  41 bond rmsd: 0.010839
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  42 bond rmsd: 0.010874
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  43 bond rmsd: 0.010963
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  44 bond rmsd: 0.010935
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  45 bond rmsd: 0.010919
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  46 bond rmsd: 0.010875
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  47 bond rmsd: 0.010906
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  48 bond rmsd: 0.010900
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  49 bond rmsd: 0.010937
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  50 bond rmsd: 0.010933
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  51 bond rmsd: 0.010930
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  52 bond rmsd: 0.010877
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  53 bond rmsd: 0.010877
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  54 bond rmsd: 0.010879
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  55 bond rmsd: 0.010828
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  56 bond rmsd: 0.010856
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  57 bond rmsd: 0.010841
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  58 bond rmsd: 0.010904
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  59 bond rmsd: 0.010866
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  60 bond rmsd: 0.010824
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  61 bond rmsd: 0.010847
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  62 bond rmsd: 0.010867
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  63 bond rmsd: 0.010874
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  64 bond rmsd: 0.010861
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  65 bond rmsd: 0.010967
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  66 bond rmsd: 0.010910
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  67 bond rmsd: 0.010887
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  68 bond rmsd: 0.010852
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  69 bond rmsd: 0.010823
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  70 bond rmsd: 0.010799
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  71 bond rmsd: 0.010813
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  72 bond rmsd: 0.010804
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  73 bond rmsd: 0.010840
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  74 bond rmsd: 0.010828
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  75 bond rmsd: 0.010901
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  76 bond rmsd: 0.010924
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  77 bond rmsd: 0.010966
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  78 bond rmsd: 0.010932
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  79 bond rmsd: 0.010965
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  80 bond rmsd: 0.010934
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  81 bond rmsd: 0.010881
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  82 bond rmsd: 0.010916
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  83 bond rmsd: 0.010928
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  84 bond rmsd: 0.010933
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  85 bond rmsd: 0.010923
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  86 bond rmsd: 0.010930
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  87 bond rmsd: 0.010930
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  88 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  89 bond rmsd: 0.010934
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  90 bond rmsd: 0.010921
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  91 bond rmsd: 0.010915
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  92 bond rmsd: 0.010883
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  93 bond rmsd: 0.010927
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  94 bond rmsd: 0.010912
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  95 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  96 bond rmsd: 0.010957
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  97 bond rmsd: 0.010982
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  98 bond rmsd: 0.010941
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step:  99 bond rmsd: 0.010963
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 100 bond rmsd: 0.010991
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 101 bond rmsd: 0.010957
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 102 bond rmsd: 0.010956
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 103 bond rmsd: 0.010976
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 104 bond rmsd: 0.011021
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 105 bond rmsd: 0.011025
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 106 bond rmsd: 0.011066
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 107 bond rmsd: 0.011017
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 108 bond rmsd: 0.011045
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 109 bond rmsd: 0.010982
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 110 bond rmsd: 0.011016
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 111 bond rmsd: 0.011018
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 112 bond rmsd: 0.011037
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 113 bond rmsd: 0.011041
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 114 bond rmsd: 0.011081
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 115 bond rmsd: 0.011108
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 116 bond rmsd: 0.011136
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 117 bond rmsd: 0.011115
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 118 bond rmsd: 0.011079
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 119 bond rmsd: 0.011048
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 120 bond rmsd: 0.011012
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 121 bond rmsd: 0.011023
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 122 bond rmsd: 0.011109
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 123 bond rmsd: 0.011091
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 124 bond rmsd: 0.011084
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 125 bond rmsd: 0.011084
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 126 bond rmsd: 0.011092
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 127 bond rmsd: 0.011101
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 128 bond rmsd: 0.011116
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 129 bond rmsd: 0.011167
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 130 bond rmsd: 0.011154
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 131 bond rmsd: 0.011200
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 132 bond rmsd: 0.011134
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 133 bond rmsd: 0.011103
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 134 bond rmsd: 0.011057
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 135 bond rmsd: 0.011026
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 136 bond rmsd: 0.011061
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 137 bond rmsd: 0.011094
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 138 bond rmsd: 0.011176
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 139 bond rmsd: 0.011128
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 140 bond rmsd: 0.011080
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 141 bond rmsd: 0.011047
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 142 bond rmsd: 0.011045
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 143 bond rmsd: 0.011063
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 144 bond rmsd: 0.011068
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 145 bond rmsd: 0.011106
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 146 bond rmsd: 0.011119
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 147 bond rmsd: 0.011114
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 148 bond rmsd: 0.011115
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 149 bond rmsd: 0.011090
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 150 bond rmsd: 0.011035
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 151 bond rmsd: 0.011008
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 152 bond rmsd: 0.011011
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 153 bond rmsd: 0.011001
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 154 bond rmsd: 0.011012
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 155 bond rmsd: 0.011039
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 156 bond rmsd: 0.011046
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 157 bond rmsd: 0.011070
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 158 bond rmsd: 0.011067
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 159 bond rmsd: 0.011062
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 160 bond rmsd: 0.011095
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 161 bond rmsd: 0.011073
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 162 bond rmsd: 0.011008
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 163 bond rmsd: 0.011006
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 164 bond rmsd: 0.011004
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 165 bond rmsd: 0.010984
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 166 bond rmsd: 0.011047
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 167 bond rmsd: 0.011022
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 168 bond rmsd: 0.011012
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 169 bond rmsd: 0.011000
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 170 bond rmsd: 0.010993
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 171 bond rmsd: 0.010972
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 172 bond rmsd: 0.010958
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 173 bond rmsd: 0.010973
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 174 bond rmsd: 0.010969
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 175 bond rmsd: 0.010981
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 176 bond rmsd: 0.011002
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 177 bond rmsd: 0.010993
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 178 bond rmsd: 0.011010
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 179 bond rmsd: 0.010992
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 180 bond rmsd: 0.010980
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 181 bond rmsd: 0.010964
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 182 bond rmsd: 0.010919
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 183 bond rmsd: 0.010915
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 184 bond rmsd: 0.010926
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 185 bond rmsd: 0.010974
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 186 bond rmsd: 0.010946
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 187 bond rmsd: 0.010943
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 188 bond rmsd: 0.010948
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 189 bond rmsd: 0.010956
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 190 bond rmsd: 0.010971
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 191 bond rmsd: 0.011167
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 192 bond rmsd: 0.011015
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 193 bond rmsd: 0.010985
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 194 bond rmsd: 0.010968
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 195 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 196 bond rmsd: 0.010950
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 197 bond rmsd: 0.010945
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 198 bond rmsd: 0.010969
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 199 bond rmsd: 0.010969
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 200 bond rmsd: 0.011062
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 201 bond rmsd: 0.011010
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 202 bond rmsd: 0.010920
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 203 bond rmsd: 0.010913
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 204 bond rmsd: 0.010927
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 205 bond rmsd: 0.010930
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 206 bond rmsd: 0.010941
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 207 bond rmsd: 0.010938
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 208 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 209 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 210 bond rmsd: 0.010934
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 211 bond rmsd: 0.010922
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 212 bond rmsd: 0.010932
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 213 bond rmsd: 0.010951
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 214 bond rmsd: 0.010954
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 215 bond rmsd: 0.010933
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 216 bond rmsd: 0.010914
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 217 bond rmsd: 0.010900
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 218 bond rmsd: 0.010889
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 219 bond rmsd: 0.010876
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 220 bond rmsd: 0.010875
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 221 bond rmsd: 0.010873
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 222 bond rmsd: 0.010886
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 223 bond rmsd: 0.010897
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 224 bond rmsd: 0.010907
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 225 bond rmsd: 0.010922
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 226 bond rmsd: 0.010925
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 227 bond rmsd: 0.010930
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 228 bond rmsd: 0.011014
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 229 bond rmsd: 0.010949
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 230 bond rmsd: 0.010918
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 231 bond rmsd: 0.010912
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 232 bond rmsd: 0.010911
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 233 bond rmsd: 0.010916
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 234 bond rmsd: 0.010922
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 235 bond rmsd: 0.010915
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 236 bond rmsd: 0.010913
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 237 bond rmsd: 0.010918
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 238 bond rmsd: 0.010898
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 239 bond rmsd: 0.010887
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 240 bond rmsd: 0.010889
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 241 bond rmsd: 0.010888
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 242 bond rmsd: 0.010890
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 243 bond rmsd: 0.010893
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 244 bond rmsd: 0.010961
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 245 bond rmsd: 0.010908
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 246 bond rmsd: 0.010913
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 247 bond rmsd: 0.010897
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 248 bond rmsd: 0.010892
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 249 bond rmsd: 0.010880
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 250 bond rmsd: 0.010871
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 251 bond rmsd: 0.010868
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 252 bond rmsd: 0.010874
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 253 bond rmsd: 0.010876
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 254 bond rmsd: 0.010885
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 255 bond rmsd: 0.010890
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 256 bond rmsd: 0.010886
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 257 bond rmsd: 0.010888
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 258 bond rmsd: 0.010895
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 259 bond rmsd: 0.010893
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 260 bond rmsd: 0.010884
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 261 bond rmsd: 0.010889
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 262 bond rmsd: 0.010898
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 263 bond rmsd: 0.010895
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 264 bond rmsd: 0.010881
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 265 bond rmsd: 0.010870
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 266 bond rmsd: 0.010860
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 267 bond rmsd: 0.010856
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 268 bond rmsd: 0.010882
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 269 bond rmsd: 0.010904
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 270 bond rmsd: 0.010912
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 271 bond rmsd: 0.010927
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 272 bond rmsd: 0.010916
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 273 bond rmsd: 0.010890
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 274 bond rmsd: 0.010881
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 275 bond rmsd: 0.010917
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 276 bond rmsd: 0.010950
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 277 bond rmsd: 0.010949
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 278 bond rmsd: 0.010951
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 279 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 280 bond rmsd: 0.010915
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 281 bond rmsd: 0.010885
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 282 bond rmsd: 0.010892
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 283 bond rmsd: 0.010919
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 284 bond rmsd: 0.010960
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 285 bond rmsd: 0.010974
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 286 bond rmsd: 0.010949
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 287 bond rmsd: 0.010928
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 288 bond rmsd: 0.010902
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 289 bond rmsd: 0.010871
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 290 bond rmsd: 0.010890
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 291 bond rmsd: 0.010915
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 292 bond rmsd: 0.010919
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 293 bond rmsd: 0.010940
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 294 bond rmsd: 0.010937
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 295 bond rmsd: 0.010932
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 296 bond rmsd: 0.010925
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 297 bond rmsd: 0.010911
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 298 bond rmsd: 0.010922
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 299 bond rmsd: 0.010939
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 300 bond rmsd: 0.010938
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 301 bond rmsd: 0.010949
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 302 bond rmsd: 0.010957
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 303 bond rmsd: 0.010947
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 304 bond rmsd: 0.010950
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 305 bond rmsd: 0.010963
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 306 bond rmsd: 0.010982
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 307 bond rmsd: 0.010996
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+  step: 308 bond rmsd: 0.011014
+Running:  /home/lum/install/xtb/xtb-190329/bin/xtb  xtb_tmp.xyz --chrg 2 --grad  --gfn 2 --etemp 500 --acc 0.1 --gbsa h2o --parallel 8 > xtb.out
+micro_cycle   2 rmsd(b):  0.0110 rws:  1.000 n_fev: 611
+See 4_refined.pdb in pdb folder.
+Time: 656.9088

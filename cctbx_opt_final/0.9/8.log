@@ -1,0 +1,549 @@
+Starting Q|R
+version:   v1.0-114-g3318f9  
+Running refinement
+   input {
+     xray_data {
+       file_name = None
+       labels = None
+       high_resolution = None
+       low_resolution = None
+       outliers_rejection = True
+       french_wilson_scale = True
+       french_wilson {
+         max_bins = 60
+         min_bin_size = 40
+       }
+       sigma_fobs_rejection_criterion = None
+       sigma_iobs_rejection_criterion = None
+       ignore_all_zeros = True
+       force_anomalous_flag_to_be_equal_to = None
+       convert_to_non_anomalous_if_ratio_pairs_lone_less_than_threshold = 0.5
+       r_free_flags {
+         file_name = None
+         label = None
+         test_flag_value = None
+         ignore_r_free_flags = False
+         disable_suitability_test = False
+         ignore_pdb_hexdigest = False
+         generate = False
+         fraction = 0.1
+         max_free = 2000
+         lattice_symmetry_max_delta = 5
+         use_lattice_symmetry = True
+         use_dataman_shells = False
+         n_shells = 20
+       }
+     }
+     pdb {
+       file_name = None
+     }
+     monomers {
+       file_name = None
+     }
+     maps {
+       map_file_name = None
+       d_min = None
+       map_coefficients_file_name = None
+       map_coefficients_label = None
+     }
+     sequence = None
+     scattering_table = wk1995 it1992 *n_gaussian neutron electron
+     wavelength = None
+     energy = None
+     twin_law = Auto
+   }
+   max_atoms = 15000
+   debug = False
+   cluster {
+     charge_cutoff = 8.0
+     clustering = false
+     charge_embedding = False
+     two_buffers = False
+     maxnum_residues_in_cluster = 15
+     clustering_method = gnc *bcc
+     altloc_method = *average subtract
+     g_scan = 10 15 20
+     g_mode = None
+   }
+   restraints = *cctbx qm
+   quantum {
+     engine_name = *mopac ani torchani terachem turbomole pyscf orca gaussian \
+                   xtb
+     charge = None
+     basis = Auto
+     method = Auto
+     memory = None
+     nproc = None
+     qm_addon = gcp dftd3 gcp-d3
+     qm_addon_method = None
+   }
+   refine {
+     dry_run = False
+     sf_algorithm = *direct fft
+     refinement_target_name = *ml ls_wunit_k1
+     mode = *opt refine gtest
+     number_of_macro_cycles = 1
+     number_of_weight_search_cycles = 50
+     number_of_refine_cycles = 5
+     number_of_micro_cycles = 1
+     data_weight = None
+     choose_best_use_r_work = False
+     skip_weight_search = False
+     adjust_restraints_weight_scale_value = 2
+     max_iterations_weight = 50
+     max_iterations_refine = 400
+     use_ase_lbfgs = False
+     line_search = True
+     stpmax = 3
+     gradient_only = true
+     update_all_scales = True
+     refine_sites = True
+     refine_adp = False
+     restraints_weight_scale = 1.0
+     shake_sites = False
+     use_convergence_test = true
+     max_bond_rmsd = 0.03
+     max_r_work_r_free_gap = 5.0
+     r_tolerance = 0.001
+     rmsd_tolerance = 0.001
+     opt_log = False
+     pre_opt = False
+     pre_opt_stpmax = 0.1
+     pre_opt_iter = 10
+     pre_opt_switch = 2
+     pre_opt_gconv = 3000
+   }
+   parallel {
+     method = *multiprocessing slurm pbs sge lsf threading
+     nproc = None
+     qsub_command = None
+   }
+   output_file_name_prefix = None
+   output_folder_name = "pdb"
+   shared_disk = True
+   rst_file = None
+   dump_gradients = None
+
+Setting QM defaults
+  Setting QM method to PM7
+
+
+***********************************************************
+restart info will be stored in /home/lum/cctbx_opt_final/0.9/cctbx_opt/pdb/8.rst.pickle
+***********************************************************
+
+start   0 rmsd(b):  0.0210 rws:  1.000 n_fev: 0
+  step:   1 bond rmsd: 0.020983
+  step:   2 bond rmsd: 0.082757
+  step:   3 bond rmsd: 1.518880
+  step:   4 bond rmsd: 0.018015
+  step:   5 bond rmsd: 0.014238
+  step:   6 bond rmsd: 0.012798
+  step:   7 bond rmsd: 0.012255
+  step:   8 bond rmsd: 0.010527
+  step:   9 bond rmsd: 0.008244
+  step:  10 bond rmsd: 0.006750
+  step:  11 bond rmsd: 0.006146
+  step:  12 bond rmsd: 0.005843
+  step:  13 bond rmsd: 0.005190
+  step:  14 bond rmsd: 0.004822
+  step:  15 bond rmsd: 0.004261
+  step:  16 bond rmsd: 0.004126
+  step:  17 bond rmsd: 0.003873
+  step:  18 bond rmsd: 0.003470
+  step:  19 bond rmsd: 0.003597
+  step:  20 bond rmsd: 0.003262
+  step:  21 bond rmsd: 0.002980
+  step:  22 bond rmsd: 0.002843
+  step:  23 bond rmsd: 0.002915
+  step:  24 bond rmsd: 0.003154
+  step:  25 bond rmsd: 0.003002
+  step:  26 bond rmsd: 0.002916
+  step:  27 bond rmsd: 0.002890
+  step:  28 bond rmsd: 0.002857
+  step:  29 bond rmsd: 0.002803
+  step:  30 bond rmsd: 0.002749
+  step:  31 bond rmsd: 0.002679
+  step:  32 bond rmsd: 0.002559
+  step:  33 bond rmsd: 0.002516
+  step:  34 bond rmsd: 0.002365
+  step:  35 bond rmsd: 0.002297
+  step:  36 bond rmsd: 0.002293
+  step:  37 bond rmsd: 0.002372
+  step:  38 bond rmsd: 0.002279
+  step:  39 bond rmsd: 0.002263
+  step:  40 bond rmsd: 0.002269
+  step:  41 bond rmsd: 0.002301
+  step:  42 bond rmsd: 0.002240
+  step:  43 bond rmsd: 0.002221
+  step:  44 bond rmsd: 0.002219
+  step:  45 bond rmsd: 0.002263
+  step:  46 bond rmsd: 0.002253
+  step:  47 bond rmsd: 0.002212
+  step:  48 bond rmsd: 0.002174
+  step:  49 bond rmsd: 0.002171
+  step:  50 bond rmsd: 0.002149
+  step:  51 bond rmsd: 0.002146
+  step:  52 bond rmsd: 0.002212
+  step:  53 bond rmsd: 0.002174
+  step:  54 bond rmsd: 0.002156
+  step:  55 bond rmsd: 0.002152
+  step:  56 bond rmsd: 0.002144
+  step:  57 bond rmsd: 0.002138
+  step:  58 bond rmsd: 0.002107
+  step:  59 bond rmsd: 0.002030
+  step:  60 bond rmsd: 0.002044
+  step:  61 bond rmsd: 0.001994
+  step:  62 bond rmsd: 0.001974
+  step:  63 bond rmsd: 0.001977
+  step:  64 bond rmsd: 0.001942
+  step:  65 bond rmsd: 0.001894
+  step:  66 bond rmsd: 0.001852
+  step:  67 bond rmsd: 0.001781
+  step:  68 bond rmsd: 0.001691
+  step:  69 bond rmsd: 0.001681
+  step:  70 bond rmsd: 0.001670
+  step:  71 bond rmsd: 0.001682
+  step:  72 bond rmsd: 0.001705
+  step:  73 bond rmsd: 0.001832
+  step:  74 bond rmsd: 0.001759
+  step:  75 bond rmsd: 0.001737
+  step:  76 bond rmsd: 0.001724
+  step:  77 bond rmsd: 0.001777
+  step:  78 bond rmsd: 0.001738
+  step:  79 bond rmsd: 0.001764
+  step:  80 bond rmsd: 0.001825
+  step:  81 bond rmsd: 0.001954
+  step:  82 bond rmsd: 0.002022
+  step:  83 bond rmsd: 0.001989
+  step:  84 bond rmsd: 0.001937
+  step:  85 bond rmsd: 0.001950
+  step:  86 bond rmsd: 0.001924
+  step:  87 bond rmsd: 0.001932
+  step:  88 bond rmsd: 0.001992
+  step:  89 bond rmsd: 0.002000
+  step:  90 bond rmsd: 0.001996
+  step:  91 bond rmsd: 0.001923
+  step:  92 bond rmsd: 0.001843
+  step:  93 bond rmsd: 0.001718
+  step:  94 bond rmsd: 0.001668
+  step:  95 bond rmsd: 0.001647
+  step:  96 bond rmsd: 0.001664
+  step:  97 bond rmsd: 0.001673
+  step:  98 bond rmsd: 0.001709
+  step:  99 bond rmsd: 0.001674
+  step: 100 bond rmsd: 0.001639
+  step: 101 bond rmsd: 0.001608
+  step: 102 bond rmsd: 0.001608
+  step: 103 bond rmsd: 0.001594
+  step: 104 bond rmsd: 0.001598
+  step: 105 bond rmsd: 0.001628
+  step: 106 bond rmsd: 0.001713
+  step: 107 bond rmsd: 0.001687
+  step: 108 bond rmsd: 0.001694
+  step: 109 bond rmsd: 0.001719
+  step: 110 bond rmsd: 0.001818
+  step: 111 bond rmsd: 0.001792
+  step: 112 bond rmsd: 0.001789
+  step: 113 bond rmsd: 0.001792
+  step: 114 bond rmsd: 0.001837
+  step: 115 bond rmsd: 0.001804
+  step: 116 bond rmsd: 0.001790
+  step: 117 bond rmsd: 0.001795
+  step: 118 bond rmsd: 0.001841
+  step: 119 bond rmsd: 0.001809
+  step: 120 bond rmsd: 0.001790
+  step: 121 bond rmsd: 0.001771
+  step: 122 bond rmsd: 0.001797
+  step: 123 bond rmsd: 0.001788
+  step: 124 bond rmsd: 0.001819
+  step: 125 bond rmsd: 0.001852
+  step: 126 bond rmsd: 0.001884
+  step: 127 bond rmsd: 0.001885
+  step: 128 bond rmsd: 0.001847
+  step: 129 bond rmsd: 0.001796
+  step: 130 bond rmsd: 0.001762
+  step: 131 bond rmsd: 0.001757
+  step: 132 bond rmsd: 0.001758
+  step: 133 bond rmsd: 0.001769
+  step: 134 bond rmsd: 0.001775
+  step: 135 bond rmsd: 0.001791
+  step: 136 bond rmsd: 0.001772
+  step: 137 bond rmsd: 0.001763
+  step: 138 bond rmsd: 0.001761
+  step: 139 bond rmsd: 0.001770
+  step: 140 bond rmsd: 0.001810
+  step: 141 bond rmsd: 0.001791
+  step: 142 bond rmsd: 0.001785
+  step: 143 bond rmsd: 0.001786
+  step: 144 bond rmsd: 0.001767
+  step: 145 bond rmsd: 0.001873
+  step: 146 bond rmsd: 0.001800
+  step: 147 bond rmsd: 0.001776
+  step: 148 bond rmsd: 0.001772
+  step: 149 bond rmsd: 0.001771
+  step: 150 bond rmsd: 0.001793
+  step: 151 bond rmsd: 0.001776
+  step: 152 bond rmsd: 0.001765
+  step: 153 bond rmsd: 0.001753
+  step: 154 bond rmsd: 0.001769
+  step: 155 bond rmsd: 0.001753
+  step: 156 bond rmsd: 0.001750
+  step: 157 bond rmsd: 0.001747
+  step: 158 bond rmsd: 0.001792
+  step: 159 bond rmsd: 0.001765
+  step: 160 bond rmsd: 0.001758
+  step: 161 bond rmsd: 0.001768
+  step: 162 bond rmsd: 0.001802
+  step: 163 bond rmsd: 0.001864
+  step: 164 bond rmsd: 0.001821
+  step: 165 bond rmsd: 0.001828
+  step: 166 bond rmsd: 0.001818
+  step: 167 bond rmsd: 0.001797
+  step: 168 bond rmsd: 0.001750
+  step: 169 bond rmsd: 0.001724
+  step: 170 bond rmsd: 0.001707
+  step: 171 bond rmsd: 0.001724
+  step: 172 bond rmsd: 0.001754
+  step: 173 bond rmsd: 0.001763
+  step: 174 bond rmsd: 0.001770
+  step: 175 bond rmsd: 0.001772
+  step: 176 bond rmsd: 0.001768
+  step: 177 bond rmsd: 0.001747
+  step: 178 bond rmsd: 0.001727
+  step: 179 bond rmsd: 0.001712
+  step: 180 bond rmsd: 0.001715
+  step: 181 bond rmsd: 0.001708
+  step: 182 bond rmsd: 0.001713
+  step: 183 bond rmsd: 0.001715
+  step: 184 bond rmsd: 0.001763
+  step: 185 bond rmsd: 0.001728
+  step: 186 bond rmsd: 0.001713
+  step: 187 bond rmsd: 0.001709
+  step: 188 bond rmsd: 0.001704
+  step: 189 bond rmsd: 0.001713
+  step: 190 bond rmsd: 0.001701
+  step: 191 bond rmsd: 0.001701
+  step: 192 bond rmsd: 0.001696
+  step: 193 bond rmsd: 0.001698
+  step: 194 bond rmsd: 0.001666
+  step: 195 bond rmsd: 0.001650
+  step: 196 bond rmsd: 0.001614
+  step: 197 bond rmsd: 0.001611
+  step: 198 bond rmsd: 0.001601
+  step: 199 bond rmsd: 0.001589
+  step: 200 bond rmsd: 0.001579
+  step: 201 bond rmsd: 0.001578
+  step: 202 bond rmsd: 0.001544
+  step: 203 bond rmsd: 0.001528
+  step: 204 bond rmsd: 0.001512
+  step: 205 bond rmsd: 0.001506
+  step: 206 bond rmsd: 0.001506
+  step: 207 bond rmsd: 0.001494
+  step: 208 bond rmsd: 0.001513
+  step: 209 bond rmsd: 0.001525
+  step: 210 bond rmsd: 0.001550
+  step: 211 bond rmsd: 0.001581
+  step: 212 bond rmsd: 0.001560
+  step: 213 bond rmsd: 0.001565
+  step: 214 bond rmsd: 0.001579
+  step: 215 bond rmsd: 0.001600
+  step: 216 bond rmsd: 0.001611
+  step: 217 bond rmsd: 0.001631
+  step: 218 bond rmsd: 0.001647
+  step: 219 bond rmsd: 0.001658
+  step: 220 bond rmsd: 0.001663
+  step: 221 bond rmsd: 0.001674
+  step: 222 bond rmsd: 0.001704
+  step: 223 bond rmsd: 0.001748
+  step: 224 bond rmsd: 0.001750
+  step: 225 bond rmsd: 0.001760
+  step: 226 bond rmsd: 0.001751
+  step: 227 bond rmsd: 0.001745
+  step: 228 bond rmsd: 0.001740
+  step: 229 bond rmsd: 0.001727
+  step: 230 bond rmsd: 0.001723
+  step: 231 bond rmsd: 0.001709
+  step: 232 bond rmsd: 0.001697
+  step: 233 bond rmsd: 0.001671
+  step: 234 bond rmsd: 0.001648
+  step: 235 bond rmsd: 0.001645
+  step: 236 bond rmsd: 0.001625
+  step: 237 bond rmsd: 0.001621
+  step: 238 bond rmsd: 0.001606
+  step: 239 bond rmsd: 0.001598
+  step: 240 bond rmsd: 0.001592
+  step: 241 bond rmsd: 0.001591
+  step: 242 bond rmsd: 0.001578
+  step: 243 bond rmsd: 0.001577
+  step: 244 bond rmsd: 0.001582
+  step: 245 bond rmsd: 0.001603
+  step: 246 bond rmsd: 0.001599
+  step: 247 bond rmsd: 0.001602
+  step: 248 bond rmsd: 0.001613
+  step: 249 bond rmsd: 0.001645
+  step: 250 bond rmsd: 0.001659
+  step: 251 bond rmsd: 0.001661
+  step: 252 bond rmsd: 0.001666
+  step: 253 bond rmsd: 0.001665
+  step: 254 bond rmsd: 0.001684
+  step: 255 bond rmsd: 0.001667
+  step: 256 bond rmsd: 0.001657
+  step: 257 bond rmsd: 0.001651
+  step: 258 bond rmsd: 0.001642
+  step: 259 bond rmsd: 0.001621
+  step: 260 bond rmsd: 0.001619
+  step: 261 bond rmsd: 0.001611
+  step: 262 bond rmsd: 0.001599
+  step: 263 bond rmsd: 0.001578
+  step: 264 bond rmsd: 0.001566
+  step: 265 bond rmsd: 0.001547
+  step: 266 bond rmsd: 0.001552
+  step: 267 bond rmsd: 0.001555
+  step: 268 bond rmsd: 0.001560
+  step: 269 bond rmsd: 0.001574
+  step: 270 bond rmsd: 0.001561
+  step: 271 bond rmsd: 0.001555
+  step: 272 bond rmsd: 0.001551
+  step: 273 bond rmsd: 0.001549
+  step: 274 bond rmsd: 0.001558
+  step: 275 bond rmsd: 0.001558
+  step: 276 bond rmsd: 0.001562
+  step: 277 bond rmsd: 0.001574
+  step: 278 bond rmsd: 0.001617
+  step: 279 bond rmsd: 0.001606
+  step: 280 bond rmsd: 0.001607
+  step: 281 bond rmsd: 0.001614
+  step: 282 bond rmsd: 0.001623
+  step: 283 bond rmsd: 0.001644
+  step: 284 bond rmsd: 0.001655
+  step: 285 bond rmsd: 0.001656
+  step: 286 bond rmsd: 0.001657
+  step: 287 bond rmsd: 0.001656
+  step: 288 bond rmsd: 0.001669
+  step: 289 bond rmsd: 0.001658
+  step: 290 bond rmsd: 0.001649
+  step: 291 bond rmsd: 0.001643
+  step: 292 bond rmsd: 0.001626
+  step: 293 bond rmsd: 0.001620
+  step: 294 bond rmsd: 0.001612
+  step: 295 bond rmsd: 0.001610
+  step: 296 bond rmsd: 0.001604
+  step: 297 bond rmsd: 0.001604
+  step: 298 bond rmsd: 0.001590
+  step: 299 bond rmsd: 0.001589
+  step: 300 bond rmsd: 0.001579
+  step: 301 bond rmsd: 0.001568
+  step: 302 bond rmsd: 0.001549
+  step: 303 bond rmsd: 0.001552
+  step: 304 bond rmsd: 0.001558
+  step: 305 bond rmsd: 0.001571
+  step: 306 bond rmsd: 0.001575
+  step: 307 bond rmsd: 0.001578
+  step: 308 bond rmsd: 0.001578
+  step: 309 bond rmsd: 0.001580
+  step: 310 bond rmsd: 0.001576
+  step: 311 bond rmsd: 0.001587
+  step: 312 bond rmsd: 0.001591
+  step: 313 bond rmsd: 0.001598
+  step: 314 bond rmsd: 0.001616
+  step: 315 bond rmsd: 0.001631
+  step: 316 bond rmsd: 0.001639
+  step: 317 bond rmsd: 0.001644
+  step: 318 bond rmsd: 0.001631
+  step: 319 bond rmsd: 0.001610
+  step: 320 bond rmsd: 0.001587
+  step: 321 bond rmsd: 0.001582
+  step: 322 bond rmsd: 0.001584
+  step: 323 bond rmsd: 0.001585
+  step: 324 bond rmsd: 0.001580
+  step: 325 bond rmsd: 0.001578
+  step: 326 bond rmsd: 0.001572
+  step: 327 bond rmsd: 0.001563
+  step: 328 bond rmsd: 0.001548
+  step: 329 bond rmsd: 0.001539
+  step: 330 bond rmsd: 0.001536
+  step: 331 bond rmsd: 0.001543
+  step: 332 bond rmsd: 0.001549
+  step: 333 bond rmsd: 0.001570
+  step: 334 bond rmsd: 0.001561
+  step: 335 bond rmsd: 0.001555
+  step: 336 bond rmsd: 0.001551
+  step: 337 bond rmsd: 0.001558
+  step: 338 bond rmsd: 0.001553
+  step: 339 bond rmsd: 0.001559
+  step: 340 bond rmsd: 0.001573
+  step: 341 bond rmsd: 0.001599
+  step: 342 bond rmsd: 0.001603
+  step: 343 bond rmsd: 0.001610
+  step: 344 bond rmsd: 0.001615
+  step: 345 bond rmsd: 0.001627
+  step: 346 bond rmsd: 0.001620
+  step: 347 bond rmsd: 0.001615
+  step: 348 bond rmsd: 0.001611
+  step: 349 bond rmsd: 0.001625
+  step: 350 bond rmsd: 0.001628
+  step: 351 bond rmsd: 0.001636
+  step: 352 bond rmsd: 0.001639
+  step: 353 bond rmsd: 0.001631
+  step: 354 bond rmsd: 0.001624
+  step: 355 bond rmsd: 0.001614
+  step: 356 bond rmsd: 0.001596
+  step: 357 bond rmsd: 0.001573
+  step: 358 bond rmsd: 0.001544
+  step: 359 bond rmsd: 0.001540
+  step: 360 bond rmsd: 0.001547
+  step: 361 bond rmsd: 0.001550
+  step: 362 bond rmsd: 0.001553
+  step: 363 bond rmsd: 0.001540
+  step: 364 bond rmsd: 0.001523
+  step: 365 bond rmsd: 0.001504
+  step: 366 bond rmsd: 0.001493
+  step: 367 bond rmsd: 0.001476
+  step: 368 bond rmsd: 0.001480
+  step: 369 bond rmsd: 0.001490
+  step: 370 bond rmsd: 0.001510
+  step: 371 bond rmsd: 0.001520
+  step: 372 bond rmsd: 0.001528
+  step: 373 bond rmsd: 0.001530
+  step: 374 bond rmsd: 0.001544
+  step: 375 bond rmsd: 0.001539
+  step: 376 bond rmsd: 0.001537
+  step: 377 bond rmsd: 0.001539
+  step: 378 bond rmsd: 0.001547
+  step: 379 bond rmsd: 0.001568
+  step: 380 bond rmsd: 0.001572
+  step: 381 bond rmsd: 0.001566
+  step: 382 bond rmsd: 0.001559
+  step: 383 bond rmsd: 0.001548
+  step: 384 bond rmsd: 0.001533
+  step: 385 bond rmsd: 0.001519
+  step: 386 bond rmsd: 0.001524
+  step: 387 bond rmsd: 0.001502
+  step: 388 bond rmsd: 0.001497
+  step: 389 bond rmsd: 0.001488
+  step: 390 bond rmsd: 0.001492
+  step: 391 bond rmsd: 0.001487
+  step: 392 bond rmsd: 0.001465
+  step: 393 bond rmsd: 0.001453
+  step: 394 bond rmsd: 0.001446
+  step: 395 bond rmsd: 0.001433
+  step: 396 bond rmsd: 0.001431
+  step: 397 bond rmsd: 0.001429
+  step: 398 bond rmsd: 0.001436
+  step: 399 bond rmsd: 0.001454
+  step: 400 bond rmsd: 0.001473
+  step: 401 bond rmsd: 0.001468
+  step: 402 bond rmsd: 0.001463
+  step: 403 bond rmsd: 0.001472
+  step: 404 bond rmsd: 0.001510
+  step: 405 bond rmsd: 0.001487
+  step: 406 bond rmsd: 0.001513
+  step: 407 bond rmsd: 0.001521
+  step: 408 bond rmsd: 0.001535
+  step: 409 bond rmsd: 0.001547
+  step: 410 bond rmsd: 0.001558
+  step: 411 bond rmsd: 0.001558
+micro_cycle   1 rmsd(b):  0.0016 rws:  1.000 n_fev: 411
+See 8_refined.pdb in pdb folder.
+Time: 5.1092
